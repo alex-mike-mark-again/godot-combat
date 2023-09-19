@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://n6rnysidrtdr"]
+[gd_scene load_steps=4 format=3 uid="uid://n6rnysidrtdr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8hcl3"]
 [ext_resource type="PackedScene" uid="uid://d4fksgdv4turk" path="res://player.tscn" id="2_ie8iv"]
-[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemy.tscn" id="3_25nxk"]
 [ext_resource type="Script" path="res://battle_manager.gd" id="4_qqxit"]
 
 [node name="Main" type="Node2D"]
@@ -14,18 +13,6 @@ script = ExtResource("4_qqxit")
 [node name="Player" parent="BattleManager" instance=ExtResource("2_ie8iv")]
 position = Vector2(590, 559)
 
-[node name="Enemies" type="Node2D" parent="BattleManager"]
-position = Vector2(387, 107)
-
-[node name="Enemy" parent="BattleManager/Enemies" instance=ExtResource("3_25nxk")]
-position = Vector2(0, 0)
-
-[node name="Enemy2" parent="BattleManager/Enemies" instance=ExtResource("3_25nxk")]
-position = Vector2(200, 0)
-
-[node name="Enemy3" parent="BattleManager/Enemies" instance=ExtResource("3_25nxk")]
-position = Vector2(400, 0)
-
 [node name="GoButton" type="Button" parent="BattleManager"]
 offset_left = 675.0
 offset_top = 581.0
@@ -34,5 +21,3 @@ offset_bottom = 612.0
 text = "Battle"
 
 [connection signal="pressed" from="BattleManager/GoButton" to="BattleManager" method="_on_go_button_pressed"]
-
-[editable path="BattleManager/Enemies/Enemy"]

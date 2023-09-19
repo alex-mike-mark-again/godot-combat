@@ -3,14 +3,17 @@ extends Node
 var selected = null
 var enemies
 var player
+var currentTroop
+var battleCount = 0
+
+var troops = [
+	"res://troops/one_dude.tscn",
+	"res://troops/three_dudes.tscn",
+]
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	enemies = get_node("Enemies").get_children()
+	load_next_battle()
 	player = get_node("Player")
-	
-	for enemy in enemies:
-		enemy.selected.connect(on_select)
-	pass # Replace with function body.
 
 func on_select(e):
 	selected = e
@@ -34,3 +37,19 @@ func _battle():
 			return
 			
 	print("enemies busted")
+	load_next_battle()
+
+func load_next_battle():
+	if currentTroop:
+		remove_child(currentTroop)
+		currentTroop.queue_free()
+		
+	if battleCount < troops.size():
+		currentTroop = load(troops[battleCount]).instantiate()
+		add_child(currentTroop)
+		enemies = currentTroop.get_children()
+		for enemy in enemies:
+			enemy.selected.connect(on_select)
+		battleCount+=1
+	else:
+		print("No more battles!")
