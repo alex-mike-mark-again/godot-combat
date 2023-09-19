@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbji1wjd0qdwy"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_yq8x0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yq8x0")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 358.0
+offset_right = 579.0
+offset_bottom = 389.0
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 397.0
+offset_right = 577.0
+offset_bottom = 428.0
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 219.0
+offset_right = 596.0
+offset_bottom = 245.0
+text = "It's Combat"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
