@@ -1,4 +1,5 @@
 extends Battler
+class_name Enemy
 
 signal selected
 signal died
