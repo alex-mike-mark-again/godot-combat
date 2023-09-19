@@ -5,6 +5,7 @@
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_c8ry4")
+mhp = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159

@@ -1,7 +1,9 @@
 extends Node2D
-
 class_name Battler
 
-var mhp = 10
-var hp = mhp
-var atk = 1
+@export var mhp: int
+@export var atk = 1
+var hp
+
+func _ready():
+	hp = mhp

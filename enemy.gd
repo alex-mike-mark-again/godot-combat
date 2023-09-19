@@ -10,8 +10,8 @@ var dead = false
 var animationPlayer
 
 func _ready():
-	mhp = 2
-	hp = mhp
+	hp = mhp # i don't wanna be calling this everytime!!!
+	# how do we get this to set properly in Battler?
 	hpLabel = get_node("HP Label")
 	atkLabel = get_node("ATK Label")
 	animationPlayer = get_node("Sprite2D/AnimationPlayer")

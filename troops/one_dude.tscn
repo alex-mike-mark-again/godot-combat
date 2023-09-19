@@ -8,3 +8,4 @@ script = ExtResource("1_wxr50")
 
 [node name="Enemy" parent="." instance=ExtResource("1_8fuw3")]
 position = Vector2(0, 0)
+mhp = 5
