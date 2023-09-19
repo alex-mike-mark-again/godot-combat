@@ -6,12 +6,14 @@ signal died
 var hpLabel
 var atkLabel
 var dead = false
+var animationPlayer
 
 func _ready():
 	mhp = 2
 	hp = mhp
 	hpLabel = get_node("HP Label")
 	atkLabel = get_node("ATK Label")
+	animationPlayer = get_node("Sprite2D/AnimationPlayer")
 	
 	hpLabel.text = str(hp)+"/"+str(mhp)
 	atkLabel.text = "atk: "+str(atk)
@@ -26,6 +28,9 @@ func deal_damage(damage):
 	
 	if hp == 0:
 		die()
+		return
+		
+	animationPlayer.play("damage")
 		
 func die():
 	died.emit(self)
