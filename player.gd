@@ -1,6 +1,7 @@
 extends Battler
 
 var def
+var dead = false
 @export var stats: Label
 
 func _ready():
@@ -12,6 +13,10 @@ func _ready():
 
 func deal_damage(damage: int):
 	hp = max(hp-damage,0)
+	if hp == 0:
+		dead = true
+		
+	_updateDisplays()	
 	
 func _updateDisplays():
 	stats.text = "❤️ "+str(hp)+"/"+str(mhp)+"\n🗡️ "+str(atk)

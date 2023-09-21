@@ -32,6 +32,13 @@ func _battle():
 	selected = null
 	
 	for enemy in enemies:
+		player.deal_damage(enemy.atk)
+	
+	if player.dead:
+		print("You're dead")
+		get_node("GoButton").hide()
+	
+	for enemy in enemies:
 		if !enemy.dead:
 			print(enemy.name+" still up")
 			return
