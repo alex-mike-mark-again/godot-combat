@@ -23,9 +23,8 @@ jobs:
         id: restore-setup
         uses: actions/cache/restore@v3
         with:
-          path: |
-            - /home/runner/.local/share/godot
-          key: godot-setup-templates-only
+          path: ~/butler
+          key: godot-setup-butler-only
 
       - name: setup-environment
         if: steps.restore-setup.outputs.cache-hit != 'true'
@@ -36,9 +35,8 @@ jobs:
       - name: store
         uses: actions/cache/save@v3
         with:
-          path: |
-            - /home/runner/.local/share/godot
-          key: godot-setup-templates-only
+          path: ~/butler
+          key: godot-setup-butler-only
 
   build:
     # The type of runner that the job will run on
