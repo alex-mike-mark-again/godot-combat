@@ -37,10 +37,7 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: |
-            - ~/butler
-            - ~/*.so
-            - ~/godot
-            - ~/.local/share/godot
+            - /home/runner/.local/share/godot
           key: godot-setup-templates-only
 
   build:
