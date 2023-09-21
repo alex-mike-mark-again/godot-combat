@@ -28,11 +28,11 @@ func _on_go_button_pressed():
 
 func _battle():
 	print("starting battle")
-	selected.deal_damage(player.atk)
+	selected.take_damage(player.atk)
 	selected = null
 	
 	for enemy in enemies:
-		player.deal_damage(enemy.atk)
+		player.take_damage(enemy.atk)
 	
 	if player.dead:
 		print("You're dead")

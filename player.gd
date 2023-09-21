@@ -1,22 +1,12 @@
 extends Battler
+class_name Player
 
-var def
-var dead = false
 @export var stats: Label
 
 func _ready():
-	def = 1
-	hp = mhp # i don't wanna be calling this everytime!!!
-	# how do we get this to set properly in Battler?
+	super._ready()
 	
-	_updateDisplays()
-
-func deal_damage(damage: int):
-	hp = max(hp-damage,0)
-	if hp == 0:
-		dead = true
-		
-	_updateDisplays()	
+	_update_displays()
 	
-func _updateDisplays():
+func _update_displays():
 	stats.text = "❤️ "+str(hp)+"/"+str(mhp)+"\n🗡️ "+str(atk)

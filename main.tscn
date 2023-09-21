@@ -19,5 +19,3 @@ offset_bottom = 612.0
 text = "Battle"
 
 [connection signal="pressed" from="BattleManager/GoButton" to="BattleManager" method="_on_go_button_pressed"]
-
-[editable path="BattleManager/Player"]
