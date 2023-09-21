@@ -10,3 +10,10 @@ func _ready():
 	
 func _update_displays():
 	stats.text = "❤️ "+str(hp)+"/"+str(mhp)+"\n🗡️ "+str(atk)
+
+func apply_buff(buff: Buff):
+	atk += buff.atk
+	mhp += buff.mhp
+	hp += buff.mhp
+	hp = min(hp+buff.hp,mhp)
+	_update_displays()

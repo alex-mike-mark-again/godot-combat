@@ -10,41 +10,39 @@ var troops = [
 	"res://troops/one_dude.tscn",
 	"res://troops/three_dudes.tscn",
 ]
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	load_next_battle()
 	player = get_node("Player")
 
 func on_select(e):
 	selected = e
-	print(e.name+" selected")
 
 func _on_go_button_pressed():
 	if !selected:
-		print("nothing seleted")
 		return
 	
 	_battle()
 
 func _battle():
-	print("starting battle")
 	selected.take_damage(player.atk)
 	selected = null
 	
 	for enemy in enemies:
-		player.take_damage(enemy.atk)
+		if !enemy.dead:
+			player.take_damage(enemy.atk)
 	
 	if player.dead:
-		print("You're dead")
 		get_node("GoButton").hide()
 	
 	for enemy in enemies:
 		if !enemy.dead:
-			print(enemy.name+" still up")
 			return
 			
-	print("enemies busted")
 	load_next_battle()
+
+func on_enemy_killed(e):
+	player.apply_buff(e.buff)
 
 func load_next_battle():
 	if currentTroop:
@@ -57,6 +55,5 @@ func load_next_battle():
 		enemies = currentTroop.get_children()
 		for enemy in enemies:
 			enemy.selected.connect(on_select)
+			enemy.died.connect(on_enemy_killed)
 		battleCount+=1
-	else:
-		print("No more battles!")

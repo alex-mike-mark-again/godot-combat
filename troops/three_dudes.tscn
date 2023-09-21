@@ -8,9 +8,12 @@ script = ExtResource("1_cdp71")
 
 [node name="Enemy" parent="." instance=ExtResource("1_av0fu")]
 position = Vector2(0, 0)
+mhp = 2
 
 [node name="Enemy2" parent="." instance=ExtResource("1_av0fu")]
 position = Vector2(200, 0)
+mhp = 2
 
 [node name="Enemy3" parent="." instance=ExtResource("1_av0fu")]
 position = Vector2(400, 0)
+mhp = 2

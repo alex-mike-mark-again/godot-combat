@@ -1,3 +1,7 @@
+# some kind of Stats class would be nice.
+# would be able to just like. define a block,
+# the battler has it. the buff has it. yeah
+
 extends Node2D
 class_name Battler
 
@@ -23,4 +27,7 @@ func die():
 
 # pseudo virtual function
 func _update_displays():
+	pass
+
+func apply_buff(buff: Buff):
 	pass

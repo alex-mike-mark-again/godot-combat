@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d15w3qccq2gc8"]
+[gd_scene load_steps=7 format=3 uid="uid://d15w3qccq2gc8"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_272ex"]
 [ext_resource type="Texture2D" uid="uid://djvdh44acre7u" path="res://icon.svg" id="2_pu05i"]
+[ext_resource type="Script" path="res://buff.gd" id="3_nstv4"]
 
 [sub_resource type="Animation" id="Animation_emtrv"]
 length = 0.001
@@ -32,7 +33,6 @@ _data = {
 [node name="Enemy" type="Node2D"]
 position = Vector2(589, 343)
 script = ExtResource("1_272ex")
-mhp = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_pu05i")
@@ -61,5 +61,8 @@ offset_left = -18.0
 offset_top = 66.0
 offset_right = 22.0
 offset_bottom = 89.0
+
+[node name="Buff" type="Node" parent="."]
+script = ExtResource("3_nstv4")
 
 [connection signal="pressed" from="Selector" to="." method="_on_selector_pressed"]
