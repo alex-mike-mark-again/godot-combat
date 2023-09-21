@@ -33,8 +33,8 @@ jobs:
       - name: setup-environment
         if: steps.restore-setup.outputs.cache-hit != 'true'
         run: |
-          pwd
-          /ci/setup.sh
+          ls -alh ci
+          ./ci/setup.sh
 
       - name: store
         uses: actions/cache/save@v3
