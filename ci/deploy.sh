@@ -1,1 +1,1 @@
-~/butler push godot-combat/html kerokerosene/combat-toy:web
+~/butler push html kerokerosene/combat-toy:web
