@@ -16,5 +16,5 @@ mv Godot_v4.1.1-stable_linux.x86_64 godot
 
 # set up templates
 mkdir -p ~/.local/share/godot/export_templates
-unzip templates.zip -d ~/.local/share/godot/export_templates
+unzip templates.zip
 mv templates ~/.local/share/godot/export_templates/4.1.1.stable
