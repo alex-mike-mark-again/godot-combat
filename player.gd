@@ -9,7 +9,7 @@ func _ready():
 	_update_displays()
 	
 func _update_displays():
-	stats.text = "❤️ "+str(hp)+"/"+str(mhp)+"\n🗡️ "+str(atk)
+	stats.text = "HP: "+str(hp)+"/"+str(mhp)+"\nATK: "+str(atk)
 
 func apply_buff(buff: Buff):
 	atk += buff.atk
