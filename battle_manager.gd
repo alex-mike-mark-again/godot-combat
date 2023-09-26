@@ -9,6 +9,7 @@ var battleCount = 0
 var troops = [
 	"res://troops/one_dude.tscn",
 	"res://troops/three_dudes.tscn",
+	"res://troops/two_dudes.tscn",
 ]
 
 func _ready():
@@ -35,14 +36,24 @@ func _battle():
 	if player.dead:
 		get_node("GoButton").hide()
 	
-	for enemy in enemies:
-		if !enemy.dead:
+	if !_all_enemies_killed():
 			return
 			
 	load_next_battle()
 
+func _all_enemies_killed():
+	var r = true
+	for enemy in enemies:
+		if !enemy.dead:
+			r = false
+	
+	return r
+
 func on_enemy_killed(e):
-	player.apply_buff(e.buff)
+	if _all_enemies_killed():
+		player.apply_permanent_buff(e.buff)
+	else:
+		player.apply_buff(e.buff)
 
 func load_next_battle():
 	if currentTroop:

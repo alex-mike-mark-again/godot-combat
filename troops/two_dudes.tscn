@@ -7,9 +7,10 @@
 script = ExtResource("1_6p5uw")
 
 [node name="Enemy" parent="." instance=ExtResource("2_d7oc4")]
+position = Vector2(220, 183)
 mhp = 10
 
 [node name="Enemy2" parent="." instance=ExtResource("2_d7oc4")]
-position = Vector2(1178, 686)
+position = Vector2(507, 180)
 mhp = 1
 atk = 10

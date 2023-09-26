@@ -22,12 +22,22 @@ func take_damage(damage: int):
 		die()
 
 func die():
-	died.emit(self)
 	dead = true
+	died.emit(self)
 
 # pseudo virtual function
 func _update_displays():
 	pass
 
 func apply_buff(buff: Buff):
-	pass
+	atk += buff.atk
+	mhp += buff.mhp
+	hp += buff.mhp
+	hp = min(hp+buff.hp,mhp)
+	_update_displays()
+	
+func remove_buff(buff: Buff):
+	atk -= buff.atk
+	mhp -= buff.mhp
+	hp = min(hp,mhp)
+	_update_displays()
