@@ -3,3 +3,4 @@
 html/*
 !html/.gitkeep
 *.tmp
+*.png~
