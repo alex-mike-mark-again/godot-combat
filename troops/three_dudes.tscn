@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://ohjcf26uprd3"]
 
-[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemy.tscn" id="1_av0fu"]
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_av0fu"]
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_cdp71"]
 
 [node name="three_dudes" type="Node2D"]
+position = Vector2(348, 159)
 script = ExtResource("1_cdp71")
 
 [node name="Enemy" parent="." instance=ExtResource("1_av0fu")]

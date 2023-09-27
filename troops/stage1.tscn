@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfa7mhlmpbqe0"]
+
+[ext_resource type="Script" path="res://troops/troop.gd" id="1_kfjx4"]
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="2_a0efq"]
+
+[node name="stage1" type="Node2D"]
+script = ExtResource("1_kfjx4")
+
+[node name="BEAR" parent="." instance=ExtResource("2_a0efq")]
+position = Vector2(575, 368)
+buff_atk = 3
+buff_mhp = 3
+buff_hp = 3
+mhp = 12
+atk = 2
+
+[node name="SNOW" parent="." instance=ExtResource("2_a0efq")]
+position = Vector2(910, 215)
+buff_atk = 2
+mhp = 1
+atk = 0
+
+[node name="CLOUD" parent="." instance=ExtResource("2_a0efq")]
+position = Vector2(567, 131)
+buff_atk = 7
+mhp = 3
+atk = 0
+
+[node name="WIND" parent="." instance=ExtResource("2_a0efq")]
+position = Vector2(243, 227)
+buff_atk = 5
+mhp = 3
+atk = 0

@@ -7,9 +7,7 @@ var currentTroop
 var battleCount = 0
 
 var troops = [
-	"res://troops/one_dude.tscn",
-	"res://troops/three_dudes.tscn",
-	"res://troops/two_dudes.tscn",
+	"res://troops/stage1.tscn",
 ]
 
 func _ready():
@@ -36,10 +34,9 @@ func _battle():
 	if player.dead:
 		get_node("GoButton").hide()
 	
-	if !_all_enemies_killed():
-			return
+	if _all_enemies_killed():
+			load_next_battle()
 			
-	load_next_battle()
 
 func _all_enemies_killed():
 	var r = true

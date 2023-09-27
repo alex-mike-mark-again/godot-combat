@@ -12,6 +12,7 @@ var buff
 var hpLabel
 var atkLabel
 var buffLabel
+var nameLabel
 var animationPlayer
 
 func _ready():
@@ -20,12 +21,15 @@ func _ready():
 	hpLabel = get_node("HP Label")
 	atkLabel = get_node("ATK Label")
 	buffLabel = get_node("Buff Label")	
+	nameLabel = get_node("Name Label")	
+	nameLabel.text = self.name
+	
 	animationPlayer = get_node("Sprite2D/AnimationPlayer")
 	_write_buff_label()
 	_update_displays()
 
 func _write_buff_label():
-	buffLabel.text = "Gives the following on defeat:\n"+buff.toString()
+	buffLabel.text = "Grants\n-----\n"+buff.toString()
 	
 func _on_selector_pressed():
 	selected.emit(self)
