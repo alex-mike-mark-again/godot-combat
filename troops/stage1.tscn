@@ -2,5 +2,7 @@
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_kfjx4"]
 
-[node name="stage1" type="Node2D"]
+[node name="stage1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_kfjx4")
