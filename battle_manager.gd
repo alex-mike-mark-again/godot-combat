@@ -32,10 +32,12 @@ func _battle():
 			player.take_damage(enemy.atk)
 	
 	if player.dead:
-		get_node("GoButton").hide()
+		get_tree().change_scene_to_file("res://game_over.tscn")
+		
 	
 	if _all_enemies_killed():
-			load_next_battle()
+			if !load_next_battle(): #this is kinda weird looking
+				get_tree().change_scene_to_file("res://game_over.tscn")
 			
 
 func _all_enemies_killed():
@@ -65,3 +67,7 @@ func load_next_battle():
 			enemy.selected.connect(on_select)
 			enemy.died.connect(on_enemy_killed)
 		battleCount+=1
+		return true
+	else:
+		return false
+		

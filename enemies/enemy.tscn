@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d15w3qccq2gc8"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_tnjn8"]
-[ext_resource type="Texture2D" uid="uid://djvdh44acre7u" path="res://sprites/icon.svg" id="2_2kvvl"]
+[ext_resource type="Texture2D" uid="uid://djvdh44acre7u" path="res://icon.svg" id="2_1djyi"]
 
 [sub_resource type="Animation" id="Animation_emtrv"]
 length = 0.001
@@ -34,7 +34,7 @@ position = Vector2(589, 343)
 script = ExtResource("1_tnjn8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_2kvvl")
+texture = ExtResource("2_1djyi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 root_node = NodePath("../..")
