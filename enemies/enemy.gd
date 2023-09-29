@@ -3,28 +3,23 @@ class_name Enemy
 
 signal selected
 
+@export var hpLabel: Label
+@export var atkLabel: Label
+@export var buffLabel: Label
+@export var nameLabel: Label
+@export var animationPlayer: AnimationPlayer
+
 @export_group("Buffs")
 @export var buff_atk: int
 @export var buff_mhp: int
 @export var buff_hp: int
-
 var buff
-var hpLabel
-var atkLabel
-var buffLabel
-var nameLabel
-var animationPlayer
 
 func _ready():
 	super._ready()
 	buff = Buff.new(buff_atk, buff_mhp, buff_hp)
-	hpLabel = get_node("HP Label")
-	atkLabel = get_node("ATK Label")
-	buffLabel = get_node("Buff Label")	
-	nameLabel = get_node("Name Label")	
 	nameLabel.text = self.name
 	
-	animationPlayer = get_node("Sprite2D/AnimationPlayer")
 	_write_buff_label()
 	_update_displays()
 

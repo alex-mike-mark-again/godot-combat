@@ -2,7 +2,7 @@
 # would be able to just like. define a block,
 # the battler has it. the buff has it. yeah
 
-extends Node2D
+extends Control
 class_name Battler
 
 @export var mhp: int

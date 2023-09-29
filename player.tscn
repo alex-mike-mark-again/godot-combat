@@ -1,18 +1,21 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4fksgdv4turk"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_c8ry4"]
-[ext_resource type="Texture2D" uid="uid://djvdh44acre7u" path="res://icon.svg" id="2_aqhr8"]
+[ext_resource type="Texture2D" uid="uid://djvdh44acre7u" path="res://icon.svg" id="2_vvl4b"]
 
-[node name="Player" type="Node2D" node_paths=PackedStringArray("stats")]
+[node name="Player" type="Control" node_paths=PackedStringArray("stats")]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_c8ry4")
 stats = NodePath("Stats")
 mhp = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159
-texture = ExtResource("2_aqhr8")
+texture = ExtResource("2_vvl4b")
 
 [node name="Name Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = -19.0
 offset_top = -88.0
 offset_right = 21.0
@@ -20,6 +23,7 @@ offset_bottom = -65.0
 text = "YOU"
 
 [node name="Stats" type="Label" parent="."]
+layout_mode = 0
 offset_left = 72.0
 offset_top = -60.0
 offset_right = 112.0

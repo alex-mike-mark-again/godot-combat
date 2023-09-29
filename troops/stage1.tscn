@@ -1,58 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfa7mhlmpbqe0"]
+[gd_scene load_steps=2 format=3 uid="uid://bfa7mhlmpbqe0"]
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_kfjx4"]
-[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="2_a0efq"]
-[ext_resource type="Texture2D" uid="uid://ck7xxlvcrmnqv" path="res://sprites/bear.png" id="3_bmras"]
-[ext_resource type="Texture2D" uid="uid://3n0yhrjeili3" path="res://sprites/show.png" id="4_cgowh"]
-[ext_resource type="Texture2D" uid="uid://b8brr2c14dguv" path="res://sprites/cloud.png" id="5_glpmp"]
-[ext_resource type="Texture2D" uid="uid://dgx5p171tbgor" path="res://sprites/wind.png" id="6_v4plu"]
 
-[node name="stage1" type="Node2D"]
+[node name="stage1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_kfjx4")
-
-[node name="BEAR" parent="." instance=ExtResource("2_a0efq")]
-position = Vector2(575, 368)
-buff_atk = 3
-buff_mhp = 3
-buff_hp = 3
-mhp = 12
-atk = 2
-
-[node name="Sprite2D" parent="BEAR" index="0"]
-scale = Vector2(0.49, 0.49)
-texture = ExtResource("3_bmras")
-
-[node name="SNOW" parent="." instance=ExtResource("2_a0efq")]
-position = Vector2(910, 215)
-buff_atk = 2
-mhp = 1
-atk = 0
-
-[node name="Sprite2D" parent="SNOW" index="0"]
-scale = Vector2(1.005, 1.005)
-texture = ExtResource("4_cgowh")
-
-[node name="CLOUD" parent="." instance=ExtResource("2_a0efq")]
-position = Vector2(567, 131)
-buff_atk = 7
-mhp = 3
-atk = 0
-
-[node name="Sprite2D" parent="CLOUD" index="0"]
-scale = Vector2(0.635, 0.635)
-texture = ExtResource("5_glpmp")
-
-[node name="WIND" parent="." instance=ExtResource("2_a0efq")]
-position = Vector2(243, 227)
-buff_atk = 5
-mhp = 3
-atk = 0
-
-[node name="Sprite2D" parent="WIND" index="0"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_v4plu")
-
-[editable path="BEAR"]
-[editable path="SNOW"]
-[editable path="CLOUD"]
-[editable path="WIND"]

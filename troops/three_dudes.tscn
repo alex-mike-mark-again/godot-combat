@@ -3,12 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_av0fu"]
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_cdp71"]
 
-[node name="three_dudes" type="Node2D"]
-position = Vector2(348, 159)
+[node name="three_dudes" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 348.0
+offset_top = 159.0
+offset_right = 348.0
+offset_bottom = 159.0
 script = ExtResource("1_cdp71")
 
 [node name="Enemy" parent="." instance=ExtResource("1_av0fu")]
-position = Vector2(0, 0)
 buff_atk = 1
 buff_mhp = 1
 buff_hp = 1
@@ -16,12 +20,14 @@ mhp = 10
 atk = 2
 
 [node name="Enemy2" parent="." instance=ExtResource("1_av0fu")]
-position = Vector2(200, 0)
+offset_left = 200.0
+offset_right = 200.0
 buff_hp = 10
 mhp = 2
 
 [node name="Enemy3" parent="." instance=ExtResource("1_av0fu")]
-position = Vector2(400, 0)
+offset_left = 400.0
+offset_right = 400.0
 buff_atk = 10
 buff_mhp = 5
 buff_hp = 5

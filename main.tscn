@@ -9,7 +9,10 @@
 script = ExtResource("4_qqxit")
 
 [node name="Player" parent="BattleManager" instance=ExtResource("2_ie8iv")]
-position = Vector2(590, 559)
+offset_left = 590.0
+offset_top = 559.0
+offset_right = 590.0
+offset_bottom = 559.0
 
 [node name="GoButton" type="Button" parent="BattleManager"]
 offset_left = 675.0

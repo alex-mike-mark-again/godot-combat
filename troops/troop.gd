@@ -1,5 +1,5 @@
-extends Node2D
-class_name Troo
+extends Control
+class_name Troop
 
 var width = 400
 var y = 100
