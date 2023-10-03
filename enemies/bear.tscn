@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmdgrah616k3l"]
+
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_82tqm"]
+[ext_resource type="Texture2D" uid="uid://ck7xxlvcrmnqv" path="res://sprites/bear.png" id="2_efbue"]
+
+[node name="BEAR" instance=ExtResource("1_82tqm")]
+
+[node name="Labels" parent="." index="1"]
+offset_right = 340.0
+offset_bottom = 231.0
+
+[node name="Selector" parent="." index="2"]
+offset_right = 340.0
+offset_bottom = 251.0
+icon = ExtResource("2_efbue")

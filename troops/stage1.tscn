@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfa7mhlmpbqe0"]
+[gd_scene load_steps=4 format=3 uid="uid://bfa7mhlmpbqe0"]
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_kfjx4"]
 [ext_resource type="PackedScene" uid="uid://c1wgu6c3s50od" path="res://enemies/cloud.tscn" id="2_52543"]
+[ext_resource type="PackedScene" uid="uid://cmdgrah616k3l" path="res://enemies/bear.tscn" id="3_ffwvb"]
 
 [node name="stage1" type="Control"]
 layout_mode = 3
@@ -9,13 +10,13 @@ anchors_preset = 0
 script = ExtResource("1_kfjx4")
 
 [node name="Cloud" parent="." instance=ExtResource("2_52543")]
-offset_left = 317.0
-offset_top = 199.0
-offset_right = 317.0
-offset_bottom = 199.0
+offset_left = 11.0
+offset_top = 53.0
+offset_right = 11.0
+offset_bottom = 53.0
 
-[node name="Cloud2" parent="." instance=ExtResource("2_52543")]
-offset_left = 836.0
-offset_top = 195.0
-offset_right = 836.0
-offset_bottom = 195.0
+[node name="BEAR" parent="." instance=ExtResource("3_ffwvb")]
+offset_left = 360.0
+offset_top = 168.0
+offset_right = 360.0
+offset_bottom = 168.0
