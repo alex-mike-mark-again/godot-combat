@@ -7,10 +7,10 @@ var currentTroop
 var battleCount = 0
 
 var troops = [
-	"res://troops/one_dude.tscn",
-	"res://troops/two_dudes.tscn",
-#	"res://troops/stage1.tscn",
-	"res://troops/three_dudes.tscn",
+#	"res://troops/one_dude.tscn",
+#	"res://troops/two_dudes.tscn",
+	"res://troops/stage1.tscn",
+#	"res://troops/three_dudes.tscn",
 ]
 
 func _ready():

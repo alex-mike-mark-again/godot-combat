@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://ck7xxlvcrmnqv" path="res://sprites/bear.png" id="2_efbue"]
 
 [node name="BEAR" instance=ExtResource("1_82tqm")]
+buff_atk = 1
+buff_hp = 10
+mhp = 12
+atk = 2
 
 [node name="Labels" parent="." index="1"]
 offset_right = 340.0

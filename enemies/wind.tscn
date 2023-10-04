@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dgx5p171tbgor" path="res://sprites/wind.png" id="2_us15p"]
 
 [node name="WIND" instance=ExtResource("1_1utia")]
+buff_atk = 3
+mhp = 3
+atk = 0
 
 [node name="Labels" parent="." index="1"]
 offset_right = 396.0

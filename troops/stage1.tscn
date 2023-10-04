@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfa7mhlmpbqe0"]
+[gd_scene load_steps=6 format=3 uid="uid://bfa7mhlmpbqe0"]
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_kfjx4"]
 [ext_resource type="PackedScene" uid="uid://c1wgu6c3s50od" path="res://enemies/cloud.tscn" id="2_52543"]
+[ext_resource type="PackedScene" uid="uid://b4xjqee8slcdi" path="res://enemies/snow.tscn" id="3_16ers"]
 [ext_resource type="PackedScene" uid="uid://cmdgrah616k3l" path="res://enemies/bear.tscn" id="3_ffwvb"]
+[ext_resource type="PackedScene" uid="uid://c21fn67qo2v8u" path="res://enemies/wind.tscn" id="4_jh0t3"]
 
 [node name="stage1" type="Control"]
 layout_mode = 3
@@ -10,13 +12,25 @@ anchors_preset = 0
 script = ExtResource("1_kfjx4")
 
 [node name="Cloud" parent="." instance=ExtResource("2_52543")]
-offset_left = 11.0
-offset_top = 53.0
-offset_right = 11.0
-offset_bottom = 53.0
+offset_left = 4.0
+offset_top = 107.0
+offset_right = 4.0
+offset_bottom = 107.0
+
+[node name="SNOW" parent="." instance=ExtResource("3_16ers")]
+offset_left = 967.0
+offset_top = 414.0
+offset_right = 967.0
+offset_bottom = 414.0
+
+[node name="WIND" parent="." instance=ExtResource("4_jh0t3")]
+offset_left = 757.0
+offset_top = 47.0
+offset_right = 757.0
+offset_bottom = 47.0
 
 [node name="BEAR" parent="." instance=ExtResource("3_ffwvb")]
-offset_left = 360.0
-offset_top = 168.0
-offset_right = 360.0
-offset_bottom = 168.0
+offset_left = 417.0
+offset_top = 116.0
+offset_right = 417.0
+offset_bottom = 116.0

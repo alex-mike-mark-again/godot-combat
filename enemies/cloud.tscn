@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b8brr2c14dguv" path="res://sprites/cloud.png" id="2_d2gfc"]
 
 [node name="Cloud" instance=ExtResource("1_v2nsx")]
-buff_atk = 3
-buff_mhp = 3
+buff_atk = 5
 mhp = 3
 atk = 0
 
