@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4xjqee8slcdi"]
+
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_doe5w"]
+[ext_resource type="Texture2D" uid="uid://bi570opwtugln" path="res://sprites/snow.png" id="2_5wb6o"]
+
+[node name="SNOW" instance=ExtResource("1_doe5w")]
+
+[node name="Labels" parent="." index="1"]
+offset_right = 182.0
+
+[node name="Selector" parent="." index="2"]
+offset_right = 182.0
+icon = ExtResource("2_5wb6o")
