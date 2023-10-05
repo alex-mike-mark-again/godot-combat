@@ -13,12 +13,3 @@ offset_left = 590.0
 offset_top = 559.0
 offset_right = 590.0
 offset_bottom = 559.0
-
-[node name="GoButton" type="Button" parent="BattleManager"]
-offset_left = 675.0
-offset_top = 581.0
-offset_right = 730.0
-offset_bottom = 612.0
-text = "Battle"
-
-[connection signal="pressed" from="BattleManager/GoButton" to="BattleManager" method="_on_go_button_pressed"]

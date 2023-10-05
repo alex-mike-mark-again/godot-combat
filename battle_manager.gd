@@ -18,13 +18,10 @@ func _ready():
 	player = get_node("Player")
 
 func on_select(e):
-	selected = e
-
-func _on_go_button_pressed():
-	if !selected:
-		return
+	if selected && selected.name == e.name:
+		_battle()
 	
-	_battle()
+	selected = e
 
 func _battle():
 	selected.take_damage(player.atk)
