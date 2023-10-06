@@ -36,8 +36,8 @@ func _battle():
 		
 	
 	if _all_enemies_killed():
-			if !load_next_battle(): #this is kinda weird looking
-				get_tree().change_scene_to_file("res://game_over.tscn")
+		if !load_next_battle(): #this is kinda weird looking
+			get_tree().change_scene_to_file("res://game_won.tscn")
 			
 
 func _all_enemies_killed():
