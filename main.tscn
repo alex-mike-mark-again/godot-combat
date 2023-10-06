@@ -8,8 +8,12 @@
 [node name="BattleManager" type="Node" parent="."]
 script = ExtResource("4_qqxit")
 
-[node name="Player" parent="BattleManager" instance=ExtResource("2_ie8iv")]
-offset_left = 590.0
-offset_top = 559.0
-offset_right = 590.0
-offset_bottom = 559.0
+[node name="Player" parent="." instance=ExtResource("2_ie8iv")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 560.0
+offset_top = 623.0
+offset_right = 560.0
+offset_bottom = 623.0
+grow_vertical = 0

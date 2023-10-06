@@ -8,7 +8,7 @@ func _ready():
 	_update_displays()
 	
 func _update_displays():
-	stats.text = "HP: "+str(hp)+"\nATK: "+str(atk)
+	stats.text = "[LIGHT: "+str(hp)+"| HEAT: "+str(atk)+"| SMOKE: "+str(rdc)+"]"
 	
 func apply_buff(buff: Buff):
 	tempBuffs.append(buff)

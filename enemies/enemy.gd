@@ -12,10 +12,12 @@ signal selected
 @export_group("Buffs")
 @export var buff_atk: int
 @export var buff_hp: int
+@export var buff_rdc: int
+
 var buff
 
 func _ready():
-	buff = Buff.new(buff_atk, buff_hp)
+	buff = Buff.new(buff_atk, buff_hp, buff_rdc)
 	nameLabel.text = self.name
 	
 	_write_buff_label()
@@ -25,9 +27,9 @@ func _ready():
 # there is probably a nicer way of doing this with
 # control/container functions
 func _resize_labels_to_hug_selector():
-	var size: Vector2 = $Selector.get_size()
-	var scale: Vector2 = $Selector.get_scale()
-	$Labels.size = Vector2(size.x*scale.x,size.y*scale.y)
+	var _size: Vector2 = $Selector.get_size()
+	var _scale: Vector2 = $Selector.get_scale()
+	$Labels.size = Vector2(_size.x*_scale.x,_size.y*_scale.y)
 	
 func _write_buff_label():
 	buffLabel.text = "Grants\n-----\n"+buff.toString()

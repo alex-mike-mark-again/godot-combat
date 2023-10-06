@@ -15,7 +15,7 @@ var troops = [
 
 func _ready():
 	load_next_battle()
-	player = get_node("Player")
+	player = get_node("../Player")
 
 func on_select(e):
 	if selected && selected.name == e.name:

@@ -5,8 +5,9 @@
 extends Control
 class_name Battler
 
-@export var atk = 0
+@export var atk = 0 # damages hp
 @export var hp = 1
+@export var rdc = 0 # damages atk
 var dead = false
 
 signal died
@@ -32,8 +33,11 @@ func _update_displays():
 func apply_buff(buff: Buff):
 	atk += buff.atk
 	hp += buff.hp
+	rdc += buff.rdc
 	_update_displays()
 	
 func remove_buff(buff: Buff):
 	atk -= buff.atk
+	rdc -= buff.rdc
+	
 	_update_displays()

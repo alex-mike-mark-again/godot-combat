@@ -3,16 +3,20 @@ class_name Buff
 
 @export var atk = 0
 @export var hp = 0
+@export var rdc = 0
 
-func _init(a,b):
+func _init(a,b,c):
 	self.atk = a
 	self.hp = b
+	self.rdc = c
 
 func toString():
 	var r = ""
-	if atk:
-		r+="atk +"+str(atk)+"\n"
 	if hp:
-		r+="hp +"+str(hp)+"\n"
+		r+="Light +"+str(hp)+"\n"
+	if atk:
+		r+="Heat +"+str(atk)+"\n"
+	if rdc:
+		r+="Smoke +"+str(rdc)
 		
 	return r
