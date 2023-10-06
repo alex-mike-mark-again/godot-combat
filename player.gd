@@ -5,12 +5,10 @@ class_name Player
 var tempBuffs: Array
 
 func _ready():
-	super._ready()
-	
 	_update_displays()
 	
 func _update_displays():
-	stats.text = "HP: "+str(hp)+"/"+str(mhp)+"\nATK: "+str(atk)
+	stats.text = "HP: "+str(hp)+"\nATK: "+str(atk)
 	
 func apply_buff(buff: Buff):
 	tempBuffs.append(buff)

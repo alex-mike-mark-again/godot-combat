@@ -5,21 +5,21 @@
 extends Control
 class_name Battler
 
-@export var mhp: int
-@export var atk = 1
-var hp
+@export var atk = 0
+@export var hp = 1
 var dead = false
 
 signal died
-
-func _ready():
-	hp = mhp
 	
 func take_damage(damage: int):
 	hp = max(hp-damage,0)
 	_update_displays()
 	if hp == 0:
 		die()
+
+func reduce_atk(reduction: int):
+	atk = max(atk-reduction,0)
+	_update_displays()
 
 func die():
 	dead = true
@@ -31,13 +31,9 @@ func _update_displays():
 
 func apply_buff(buff: Buff):
 	atk += buff.atk
-	mhp += buff.mhp
-	hp += buff.mhp
-	hp = min(hp+buff.hp,mhp)
+	hp += buff.hp
 	_update_displays()
 	
 func remove_buff(buff: Buff):
 	atk -= buff.atk
-	mhp -= buff.mhp
-	hp = min(hp,mhp)
 	_update_displays()

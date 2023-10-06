@@ -11,13 +11,11 @@ signal selected
 
 @export_group("Buffs")
 @export var buff_atk: int
-@export var buff_mhp: int
 @export var buff_hp: int
 var buff
 
 func _ready():
-	super._ready()
-	buff = Buff.new(buff_atk, buff_mhp, buff_hp)
+	buff = Buff.new(buff_atk, buff_hp)
 	nameLabel.text = self.name
 	
 	_write_buff_label()
@@ -42,7 +40,7 @@ func die():
 	hide()
 
 func _update_displays():
-	hpLabel.text = str(hp)+"/"+str(mhp)
+	hpLabel.text = "hp: "+str(hp)
 	atkLabel.text = "atk: "+str(atk)
 	
 func take_damage(damage: int):

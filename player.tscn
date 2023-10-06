@@ -8,7 +8,8 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_c8ry4")
 stats = NodePath("Stats")
-mhp = 10
+atk = 1
+hp = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159

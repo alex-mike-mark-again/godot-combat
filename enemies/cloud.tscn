@@ -5,8 +5,7 @@
 
 [node name="Cloud" instance=ExtResource("1_v2nsx")]
 buff_atk = 5
-mhp = 3
-atk = 0
+hp = 3
 
 [node name="Labels" parent="." index="1"]
 offset_right = 497.0

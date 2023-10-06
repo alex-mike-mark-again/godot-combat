@@ -6,4 +6,3 @@ var y = 100
 
 func _ready():
 	var _enemies = get_children()
-	
