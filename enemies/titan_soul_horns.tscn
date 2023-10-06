@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg7mv3tjry87j"]
+
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_oegm2"]
+
+[node name="Titan Soul Horns" instance=ExtResource("1_oegm2")]

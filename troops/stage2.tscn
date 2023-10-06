@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkuw4jf5j563p"]
+
+[ext_resource type="Script" path="res://troops/troop.gd" id="1_0bbd5"]
+[ext_resource type="PackedScene" uid="uid://oilui04nb7yd" path="res://enemies/spike_pit.tscn" id="2_dv0t6"]
+[ext_resource type="PackedScene" uid="uid://wu338vqhnnxg" path="res://enemies/titan_soul_face.tscn" id="3_vjbr3"]
+[ext_resource type="PackedScene" uid="uid://bg7mv3tjry87j" path="res://enemies/titan_soul_horns.tscn" id="4_yu3w7"]
+[ext_resource type="PackedScene" uid="uid://ddknbnnun8ckc" path="res://enemies/titan_soul_jacket.tscn" id="5_pg4dw"]
+[ext_resource type="PackedScene" uid="uid://dfa44hyyci7y3" path="res://enemies/titan_soul_wound.tscn" id="6_g78q6"]
+
+[node name="stage2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0bbd5")
+
+[node name="Spike Pit" parent="." instance=ExtResource("2_dv0t6")]
+offset_left = 54.0
+offset_top = 401.0
+offset_right = 54.0
+offset_bottom = 401.0
+
+[node name="Selector" parent="Spike Pit" index="2"]
+scale = Vector2(7.6, 1)
+
+[node name="Titan Soul Face" parent="." instance=ExtResource("3_vjbr3")]
+offset_left = 369.0
+offset_top = 59.0
+offset_right = 369.0
+offset_bottom = 59.0
+
+[node name="Titan Soul Horns" parent="." instance=ExtResource("4_yu3w7")]
+offset_left = 181.0
+offset_top = 171.0
+offset_right = 181.0
+offset_bottom = 171.0
+
+[node name="Titan Soul Jacket" parent="." instance=ExtResource("5_pg4dw")]
+offset_left = 640.0
+offset_top = 61.0
+offset_right = 640.0
+offset_bottom = 61.0
+
+[node name="Titan Soul Wound" parent="." instance=ExtResource("6_g78q6")]
+offset_left = 830.0
+offset_top = 179.0
+offset_right = 830.0
+offset_bottom = 179.0
+
+[editable path="Spike Pit"]
