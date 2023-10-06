@@ -21,8 +21,16 @@ func _ready():
 	nameLabel.text = self.name
 	
 	_write_buff_label()
+	_resize_labels_to_hug_selector()
 	_update_displays()
 
+# there is probably a nicer way of doing this with
+# control/container functions
+func _resize_labels_to_hug_selector():
+	var size: Vector2 = $Selector.get_size()
+	var scale: Vector2 = $Selector.get_scale()
+	$Labels.size = Vector2(size.x*scale.x,size.y*scale.y)
+	
 func _write_buff_label():
 	buffLabel.text = "Grants\n-----\n"+buff.toString()
 	
