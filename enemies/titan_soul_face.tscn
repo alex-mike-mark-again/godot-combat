@@ -3,3 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_fkdwh"]
 
 [node name="Titan Soul Face" instance=ExtResource("1_fkdwh")]
+buff_atk = 1
+buff_hp = 2
+buff_rdc = 1
+atk = 2
+hp = 6

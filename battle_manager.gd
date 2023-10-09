@@ -10,6 +10,7 @@ var troops = [
 #	"res://troops/one_dude.tscn",
 #	"res://troops/two_dudes.tscn",
 	"res://troops/stage1.tscn",
+	"res://troops/stage2.tscn",
 #	"res://troops/three_dudes.tscn",
 ]
 
@@ -18,13 +19,14 @@ func _ready():
 	player = get_node("../Player")
 
 func on_select(e):
-	if selected && selected.name == e.name:
+	if selected != null && selected.name == e.name:
 		_battle()
 	
 	selected = e
 
 func _battle():
 	selected.take_damage(player.atk)
+	selected.reduce_atk(player.rdc)
 	selected = null
 	
 	for enemy in enemies:
