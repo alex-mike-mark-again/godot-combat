@@ -39,8 +39,10 @@ func _on_selector_pressed():
 
 func die():
 	super.die()
+	var finished = animationPlayer.animation_finished
 	animationPlayer.play("death")
-	$Selector.disabled = true
+	await finished # curious about what the implications of using await are.
+	hide()
 
 func _update_displays():
 	hpLabel.text = "hp: "+str(hp)
@@ -50,6 +52,9 @@ func take_damage(damage: int):
 	super.take_damage(damage)
 	if !dead:
 		animationPlayer.play("damage")
+		$AudioStreamPlayer2D.play()
+	else:
+		$AudioStreamPlayer2D2.play()
 
 func _on_selector_mouse_entered():
 	buffLabel.show()
