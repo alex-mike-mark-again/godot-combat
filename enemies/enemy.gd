@@ -39,7 +39,8 @@ func _on_selector_pressed():
 
 func die():
 	super.die()
-	hide()
+	animationPlayer.play("death")
+	$Selector.disabled = true
 
 func _update_displays():
 	hpLabel.text = "hp: "+str(hp)
@@ -47,7 +48,8 @@ func _update_displays():
 	
 func take_damage(damage: int):
 	super.take_damage(damage)
-	animationPlayer.play("damage")
+	if !dead:
+		animationPlayer.play("damage")
 
 func _on_selector_mouse_entered():
 	buffLabel.show()
