@@ -5,6 +5,7 @@ var enemies
 var player
 var currentTroop
 var battleCount = 0
+var turnsTaken = 0
 
 var troops = [
 #	"res://troops/one_dude.tscn",
@@ -15,16 +16,18 @@ var troops = [
 ]
 
 func _ready():
-	load_next_battle()
+	advance_to_next_stage()
 	player = get_node("../Player")
 
 func on_select(e):
 	if selected != null && selected.name == e.name:
 		_battle()
+		_check_end_of_battle()
 	
 	selected = e
 
 func _battle():
+	turnsTaken += 1
 	selected.take_damage(player.atk)
 	selected.reduce_atk(player.rdc)
 	selected = null
@@ -32,15 +35,19 @@ func _battle():
 	for enemy in enemies:
 		if !enemy.dead:
 			player.take_damage(enemy.atk)
-	
+			
+
+func _check_end_of_battle():
 	if player.dead:
 		get_tree().change_scene_to_file("res://game_over.tscn")
 		
-	
-	if _all_enemies_killed():
-		if !load_next_battle(): #this is kinda weird looking
+	if _player_win():
+		player.on_victory()
+		if !advance_to_next_stage(): #this is kinda weird looking
 			get_tree().change_scene_to_file("res://game_won.tscn")
-			
+
+func _player_win():
+	return _all_enemies_killed()
 
 func _all_enemies_killed():
 	var r = true
@@ -51,17 +58,17 @@ func _all_enemies_killed():
 	return r
 
 func on_enemy_killed(e):
-	if _all_enemies_killed():
-		player.apply_permanent_buff(e.buff)
-	else:
-		player.apply_buff(e.buff)
+	player.apply_buff(e.buff)
 
-func load_next_battle():
+func advance_to_next_stage():
+	# get rid of defeated troop
 	if currentTroop:
 		remove_child(currentTroop)
 		currentTroop.queue_free()
-		
+	
+	# if there are troops left, load 'em.
 	if battleCount < troops.size():
+		# THIS chunk is what loads the next battle.
 		currentTroop = load(troops[battleCount]).instantiate()
 		add_child(currentTroop)
 		enemies = currentTroop.get_children()
