@@ -39,9 +39,9 @@ func _on_selector_pressed():
 
 func die():
 	super.die()
-	var finished = animationPlayer.animation_finished
 	animationPlayer.play("death")
-	await finished # curious about what the implications of using await are.
+	$AudioStreamPlayer2D2.play()
+	await animationPlayer.animation_finished # curious about what the implications of using await are.
 	hide()
 
 func _update_displays():
@@ -53,12 +53,13 @@ func take_damage(damage: int):
 	if !dead:
 		animationPlayer.play("damage")
 		$AudioStreamPlayer2D.play()
-	else:
-		$AudioStreamPlayer2D2.play()
+		await animationPlayer.animation_finished
+
+func attack_vfx():
+	animationPlayer.play("attack")
 
 func _on_selector_mouse_entered():
 	buffLabel.show()
-
 
 func _on_selector_mouse_exited():
 	buffLabel.hide()

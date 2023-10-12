@@ -8,11 +8,11 @@ var battleCount = 0
 var turnsTaken = 0
 
 var troops = [
+	"res://troops/three_dudes.tscn",
 #	"res://troops/one_dude.tscn",
 #	"res://troops/two_dudes.tscn",
 	"res://troops/stage1.tscn",
 	"res://troops/stage2.tscn",
-#	"res://troops/three_dudes.tscn",
 ]
 
 func _ready():
@@ -30,10 +30,13 @@ func _battle():
 	turnsTaken += 1
 	selected.take_damage(player.atk)
 	selected.reduce_atk(player.rdc)
-	selected = null
+	await selected.animationPlayer.animation_finished
+	selected = null # works, but doesn't like. un activate the button.
 	
 	for enemy in enemies:
-		if !enemy.dead:
+		if !enemy.dead && enemy.atk:
+			enemy.attack_vfx()
+			await enemy.animationPlayer.animation_finished
 			player.take_damage(enemy.atk)
 			
 
