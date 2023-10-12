@@ -9,6 +9,7 @@ func _ready():
 	_update_displays()
 	
 func _update_displays():
+	# so, this should be an animation that we don't wait on for sure.
 	stats.text = "[LIGHT: "+str(hp)+"| HEAT: "+str(atk)+"| SMOKE: "+str(rdc)+"]"
 
 func on_victory():
