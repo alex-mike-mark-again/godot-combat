@@ -7,6 +7,7 @@ var globals
 var currentTroop
 var battleCount = 0
 var turnsTaken = 0
+var clickOn = true
 
 var troops = [
 #	"res://troops/three_dudes.tscn",
@@ -23,13 +24,17 @@ func _ready():
 	globals = get_node("/root/Globals")
 
 func on_select(e):
+	if !clickOn:
+		return
+		
 	if selected != null && selected.name == e.name:
-		_battle()
+		await _battle()
 		_check_end_of_battle()
 	
 	selected = e
 
 func _battle():
+	clickOn = false
 	turnsTaken += 1
 	selected.take_damage(player.atk)
 	selected.reduce_atk(player.rdc)
@@ -41,7 +46,9 @@ func _battle():
 			enemy.attack_vfx()
 			await enemy.animationPlayer.animation_finished
 			player.take_damage(enemy.atk)
-			
+	
+	clickOn = true	
+	
 func _check_end_of_battle():
 	if player.dead:
 		get_tree().change_scene_to_file("res://game_over.tscn")
