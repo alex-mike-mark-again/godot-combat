@@ -5,8 +5,6 @@
 
 [node name="SNOW" instance=ExtResource("1_doe5w")]
 buff_atk = 2
-mhp = 1
-atk = 0
 
 [node name="Labels" parent="." index="1"]
 offset_right = 182.0

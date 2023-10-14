@@ -7,7 +7,7 @@
 buff_atk = 1
 buff_hp = 10
 atk = 2
-hp = 12
+maxHp = 12
 
 [node name="Labels" parent="." index="1"]
 offset_right = 340.0

@@ -7,4 +7,4 @@ buff_atk = 1
 buff_hp = 2
 buff_rdc = 1
 atk = 2
-hp = 6
+maxHp = 6

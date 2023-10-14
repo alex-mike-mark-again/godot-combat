@@ -17,6 +17,7 @@ signal selected
 var buff
 
 func _ready():
+	super._ready()
 	buff = Buff.new(buff_atk, buff_hp, buff_rdc)
 	nameLabel.text = self.name
 	

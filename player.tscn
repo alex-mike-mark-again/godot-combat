@@ -8,7 +8,7 @@ anchors_preset = 0
 script = ExtResource("1_c8ry4")
 stats = NodePath("Stats")
 atk = 1
-hp = 10
+maxHp = 10
 
 [node name="Stats" type="Label" parent="."]
 layout_mode = 1

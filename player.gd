@@ -6,6 +6,7 @@ var tempBuffs: Array
 var ash = 1 # determines how many buffs you get to keep after a stage. secret
 
 func _ready():
+	super._ready()
 	_update_displays()
 	
 func _update_displays():

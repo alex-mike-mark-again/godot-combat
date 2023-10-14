@@ -5,4 +5,4 @@
 [node name="Spike Pit" instance=ExtResource("1_jiyun")]
 buff_hp = 10
 atk = 1
-hp = 25
+maxHp = 25

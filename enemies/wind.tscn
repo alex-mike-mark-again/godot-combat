@@ -5,7 +5,7 @@
 
 [node name="WIND" instance=ExtResource("1_1utia")]
 buff_atk = 3
-hp = 3
+maxHp = 3
 
 [node name="Labels" parent="." index="1"]
 offset_right = 396.0
