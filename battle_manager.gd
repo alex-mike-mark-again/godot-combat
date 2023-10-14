@@ -14,6 +14,7 @@ var troops = [
 #	"res://troops/two_dudes.tscn",
 	"res://troops/stage1.tscn",
 	"res://troops/stage2.tscn",
+	"res://troops/stage3.tscn",
 ]
 
 func _ready():
@@ -41,7 +42,6 @@ func _battle():
 			await enemy.animationPlayer.animation_finished
 			player.take_damage(enemy.atk)
 			
-
 func _check_end_of_battle():
 	if player.dead:
 		get_tree().change_scene_to_file("res://game_over.tscn")
