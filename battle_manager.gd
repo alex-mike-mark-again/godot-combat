@@ -3,6 +3,7 @@ extends Node
 var selected = null
 var enemies
 var player
+var globals
 var currentTroop
 var battleCount = 0
 var turnsTaken = 0
@@ -11,13 +12,14 @@ var troops = [
 	"res://troops/three_dudes.tscn",
 #	"res://troops/one_dude.tscn",
 #	"res://troops/two_dudes.tscn",
-	"res://troops/stage1.tscn",
-	"res://troops/stage2.tscn",
+#	"res://troops/stage1.tscn",
+#	"res://troops/stage2.tscn",
 ]
 
 func _ready():
 	advance_to_next_stage()
 	player = get_node("../Player")
+	globals = get_node("/root/Globals")
 
 func on_select(e):
 	if selected != null && selected.name == e.name:
@@ -47,6 +49,8 @@ func _check_end_of_battle():
 	if _player_win():
 		player.on_victory()
 		if !advance_to_next_stage(): #this is kinda weird looking
+			globals.finalTurns = turnsTaken
+			globals.finalLight = player.hp
 			get_tree().change_scene_to_file("res://game_won.tscn")
 
 func _player_win():
