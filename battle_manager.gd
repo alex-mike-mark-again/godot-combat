@@ -9,11 +9,11 @@ var battleCount = 0
 var turnsTaken = 0
 
 var troops = [
-	"res://troops/three_dudes.tscn",
+#	"res://troops/three_dudes.tscn",
 #	"res://troops/one_dude.tscn",
 #	"res://troops/two_dudes.tscn",
-#	"res://troops/stage1.tscn",
-#	"res://troops/stage2.tscn",
+	"res://troops/stage1.tscn",
+	"res://troops/stage2.tscn",
 ]
 
 func _ready():
@@ -78,7 +78,7 @@ func advance_to_next_stage():
 		# THIS chunk is what loads the next battle.
 		currentTroop = load(troops[battleCount]).instantiate()
 		add_child(currentTroop)
-		enemies = currentTroop.get_children()
+		enemies = currentTroop.get_enemies()
 		for enemy in enemies:
 			enemy.selected.connect(on_select)
 			enemy.died.connect(on_enemy_killed)
