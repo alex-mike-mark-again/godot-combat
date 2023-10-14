@@ -13,22 +13,29 @@ offset_bottom = 159.0
 script = ExtResource("1_cdp71")
 
 [node name="Enemy" parent="." instance=ExtResource("1_av0fu")]
-buff_atk = 1
-buff_mhp = 1
-buff_hp = 1
-mhp = 10
+buff_atk = 2
+buff_rdc = 1
+buff_max_hp = 15
 atk = 2
+maxHp = 15
+rdc = null
 
 [node name="Enemy2" parent="." instance=ExtResource("1_av0fu")]
 offset_left = 200.0
 offset_right = 200.0
+buff_atk = null
 buff_hp = 10
-mhp = 2
+buff_rdc = null
+buff_max_hp = 10
+atk = 1
+maxHp = 25
+rdc = null
 
 [node name="Enemy3" parent="." instance=ExtResource("1_av0fu")]
 offset_left = 400.0
 offset_right = 400.0
 buff_atk = 10
-buff_mhp = 5
 buff_hp = 5
-mhp = 1
+buff_rdc = 2
+atk = 3
+rdc = null

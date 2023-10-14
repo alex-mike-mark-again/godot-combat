@@ -13,14 +13,15 @@ signal selected
 @export var buff_atk: int
 @export var buff_hp: int
 @export var buff_rdc: int
+@export var buff_max_hp: int
 
 var buff
 
 func _ready():
 	super._ready()
-	buff = Buff.new(buff_atk, buff_hp, buff_rdc)
+	buff = Buff.new(buff_atk, buff_hp, buff_rdc,buff_max_hp)
 	nameLabel.text = self.name
-	
+
 	_write_buff_label()
 	_resize_labels_to_hug_selector()
 	_update_displays()
@@ -31,10 +32,10 @@ func _resize_labels_to_hug_selector():
 	var _size: Vector2 = $Selector.get_size()
 	var _scale: Vector2 = $Selector.get_scale()
 	$Labels.size = Vector2(_size.x*_scale.x,_size.y*_scale.y)
-	
+
 func _write_buff_label():
 	buffLabel.text = "Grants\n-----\n"+buff.toString()
-	
+
 func _on_selector_pressed():
 	selected.emit(self)
 
@@ -48,7 +49,7 @@ func die():
 func _update_displays():
 	hpLabel.text = "hp: "+str(hp)
 	atkLabel.text = "atk: "+str(atk)
-	
+
 func take_damage(damage: int):
 	super.take_damage(damage)
 	if !dead:

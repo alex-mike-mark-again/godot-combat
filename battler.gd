@@ -1,7 +1,3 @@
-# some kind of Stats class would be nice.
-# would be able to just like. define a block,
-# the battler has it. the buff has it. yeah
-
 extends Control
 class_name Battler
 
@@ -36,12 +32,15 @@ func _update_displays():
 
 func apply_buff(buff: Buff):
 	atk += buff.atk
-	hp += buff.hp
+	maxHp += buff.maxHp
+	hp = min(hp+buff.maxHp+buff.hp,maxHp)
 	rdc += buff.rdc
 	_update_displays()
 
 func remove_buff(buff: Buff):
 	atk -= buff.atk
+	maxHp -= buff.maxHp
+	hp = min(hp, maxHp)
 	rdc -= buff.rdc
 
 	_update_displays()
