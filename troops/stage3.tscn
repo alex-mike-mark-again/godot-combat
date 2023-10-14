@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5qdq1y2qmqpq"]
+
+[ext_resource type="Script" path="res://troops/troop.gd" id="1_81nne"]
+
+[node name="stage3" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_81nne")
