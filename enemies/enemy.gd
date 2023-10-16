@@ -6,6 +6,7 @@ signal selected
 @export var hpLabel: Label
 @export var atkLabel: Label
 @export var buffLabel: Label
+@export var buff_display: Control
 @export var nameLabel: Label
 @export var animationPlayer: AnimationPlayer
 
@@ -35,6 +36,7 @@ func _resize_labels_to_hug_selector():
 
 func _write_buff_label():
 	buffLabel.text = "Grants\n-----\n"+buff.toString()
+	buff_display.update_display(buff)
 
 func _on_selector_pressed():
 	selected.emit(self)
@@ -61,7 +63,7 @@ func attack_vfx():
 	animationPlayer.play("attack")
 
 func _on_selector_mouse_entered():
-	buffLabel.show()
+	buff_display.show()
 
 func _on_selector_mouse_exited():
-	buffLabel.hide()
+	buff_display.hide()
