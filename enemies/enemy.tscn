@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d15w3qccq2gc8"]
+[gd_scene load_steps=15 format=3 uid="uid://d15w3qccq2gc8"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_tnjn8"]
 [ext_resource type="Texture2D" uid="uid://djvdh44acre7u" path="res://icon.svg" id="2_1djyi"]
@@ -103,6 +103,42 @@ _data = {
 "death": SubResource("Animation_4oexk")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3iof6"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(1, 1, 1, 0.121569)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p73tg"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(1, 1, 1, 0.788235)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8f22k"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4x4b"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="Theme" id="Theme_llx87"]
+Button/styles/focus = SubResource("StyleBoxFlat_3iof6")
+Button/styles/hover = SubResource("StyleBoxFlat_p73tg")
+Button/styles/normal = SubResource("StyleBoxEmpty_8f22k")
+Button/styles/pressed = SubResource("StyleBoxFlat_f4x4b")
+
 [node name="Enemy" type="Control" node_paths=PackedStringArray("hpLabel", "atkLabel", "buffLabel", "nameLabel", "animationPlayer")]
 layout_mode = 3
 anchors_preset = 0
@@ -173,6 +209,7 @@ horizontal_alignment = 1
 layout_mode = 1
 offset_right = 136.0
 offset_bottom = 136.0
+theme = SubResource("Theme_llx87")
 icon = ExtResource("2_1djyi")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
