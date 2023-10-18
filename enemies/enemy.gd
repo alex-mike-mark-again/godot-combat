@@ -5,7 +5,6 @@ signal selected
 
 @export var hpLabel: Label
 @export var atkLabel: Label
-@export var buffLabel: Label
 @export var buff_display: Control
 @export var nameLabel: Label
 @export var animationPlayer: AnimationPlayer
@@ -35,7 +34,6 @@ func _resize_labels_to_hug_selector():
 	$Labels.size = Vector2(_size.x*_scale.x,_size.y*_scale.y)
 
 func _write_buff_label():
-	buffLabel.text = "Grants\n-----\n"+buff.toString()
 	buff_display.update_display(buff)
 
 func _on_selector_pressed():
