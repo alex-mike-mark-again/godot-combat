@@ -1,59 +1,45 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4fksgdv4turk"]
+[gd_scene load_steps=8 format=3 uid="uid://d4fksgdv4turk"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_c8ry4"]
 [ext_resource type="Theme" uid="uid://dhn14l7ryv320" path="res://themes/player_theme.tres" id="1_t2r6v"]
 [ext_resource type="Texture2D" uid="uid://dxdmoowsm7uhd" path="res://sprites/player_plate_2.png" id="2_65d1y"]
 [ext_resource type="Texture2D" uid="uid://ik3lyxipbghc" path="res://sprites/light_icon.png" id="3_wis7s"]
 [ext_resource type="Texture2D" uid="uid://qt2h1hudlcey" path="res://sprites/heat_icon.png" id="4_dbem8"]
+[ext_resource type="PackedScene" uid="uid://cx0w0wocxsg33" path="res://ui/stat_icon.tscn" id="4_lbft7"]
 [ext_resource type="Texture2D" uid="uid://cdy3r0wuyy6ow" path="res://sprites/smoke_icon.png" id="5_efmpm"]
 
-[node name="Player" type="Control" node_paths=PackedStringArray("light_display", "heat_display", "smoke_display")]
+[node name="Player" type="Control"]
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_t2r6v")
 script = ExtResource("1_c8ry4")
-light_display = NodePath("light_icon/Label")
-heat_display = NodePath("heat_icon/Label")
-smoke_display = NodePath("smoke_icon/Label")
 atk = 1
 maxHp = 10
 
 [node name="plate" type="Sprite2D" parent="."]
 texture = ExtResource("2_65d1y")
 
-[node name="light_icon" type="Sprite2D" parent="."]
-position = Vector2(-49, -21)
+[node name="light_icon" parent="." instance=ExtResource("4_lbft7")]
+layout_mode = 0
+offset_left = -81.0
+offset_top = -50.0
+offset_right = -17.0
+offset_bottom = 8.0
 texture = ExtResource("3_wis7s")
 
-[node name="Label" type="Label" parent="light_icon"]
-offset_left = 26.0
-offset_top = -13.0
-offset_right = 89.0
-offset_bottom = 13.0
-theme = ExtResource("1_t2r6v")
-text = "X/Y"
-
-[node name="heat_icon" type="Sprite2D" parent="."]
-position = Vector2(-132, 23)
+[node name="heat_icon" parent="." instance=ExtResource("4_lbft7")]
+layout_mode = 0
+offset_left = -159.0
+offset_top = -2.0
+offset_right = -104.0
+offset_bottom = 49.0
 texture = ExtResource("4_dbem8")
 
-[node name="Label" type="Label" parent="heat_icon"]
-offset_left = 19.0
-offset_top = -16.0
-offset_right = 59.0
-offset_bottom = 10.0
-theme = ExtResource("1_t2r6v")
-text = "X"
-
-[node name="smoke_icon" type="Sprite2D" parent="."]
-position = Vector2(99, 21)
+[node name="smoke_icon" parent="." instance=ExtResource("4_lbft7")]
+layout_mode = 0
+offset_left = 71.0
+offset_top = -13.0
+offset_right = 122.0
+offset_bottom = 56.0
 texture = ExtResource("5_efmpm")
-
-[node name="Label" type="Label" parent="smoke_icon"]
-offset_left = 18.0
-offset_top = -12.0
-offset_right = 59.0
-offset_bottom = 14.0
-theme = ExtResource("1_t2r6v")
-text = "Z"

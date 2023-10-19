@@ -14,9 +14,16 @@ func _ready():
 	
 func _update_displays(delta: Dictionary):
 	# so, this should be an animation that we don't wait on for sure.
-	light_display.text = str(hp)+"/"+str(maxHp)
-	heat_display.text = str(atk)
-	smoke_display.text = str(rdc)
+	$light_icon/current_label.text = str(hp)+"/"+str(maxHp)
+	$heat_icon/current_label.text = str(atk)
+	$smoke_icon/current_label.text = str(rdc)
+	
+	if delta.get("hp") || delta.get("maxHp"):
+		$light_icon.play_delta_anim("NaN")
+	if delta.get("atk"):
+		$heat_icon.play_delta_anim(delta.atk)
+	if delta.get("rdc"):
+		$smoke_icon.play_delta_anim(delta.rdc)
 
 func on_victory():
 	_gain_permanent_buffs()
