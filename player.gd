@@ -10,9 +10,9 @@ var ash = 1 # determines how many buffs you get to keep after a stage. secret
 
 func _ready():
 	super._ready()
-	_update_displays()
+	_update_displays({})
 	
-func _update_displays():
+func _update_displays(delta: Dictionary):
 	# so, this should be an animation that we don't wait on for sure.
 	light_display.text = str(hp)+"/"+str(maxHp)
 	heat_display.text = str(atk)

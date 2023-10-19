@@ -24,7 +24,7 @@ func _ready():
 
 	_write_buff_label()
 	_resize_labels_to_hug_selector()
-	_update_displays()
+	_update_displays({})
 
 # there is probably a nicer way of doing this with
 # control/container functions
@@ -46,7 +46,7 @@ func die():
 	await animationPlayer.animation_finished # curious about what the implications of using await are.
 	hide()
 
-func _update_displays():
+func _update_displays(delta: Dictionary):
 	hpLabel.text = "hp: "+str(hp)
 	atkLabel.text = "atk: "+str(atk)
 
