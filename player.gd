@@ -18,8 +18,8 @@ func _update_displays(delta: Dictionary):
 	$heat_icon/current_label.text = str(atk)
 	$smoke_icon/current_label.text = str(rdc)
 	
-	if delta.get("hp") || delta.get("maxHp"):
-		$light_icon.play_delta_anim("NaN")
+	if delta.get("hp"):
+		$light_icon.play_delta_anim(delta.hp)
 	if delta.get("atk"):
 		$heat_icon.play_delta_anim(delta.atk)
 	if delta.get("rdc"):
