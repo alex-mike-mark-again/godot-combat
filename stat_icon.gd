@@ -10,5 +10,5 @@ func play_delta_anim(delta: int):
 		
 	x.get_node("AnimationPlayer").play("delta")
 	await x.get_node("AnimationPlayer").animation_finished
-	x.free()
+	x.queue_free()
 	
