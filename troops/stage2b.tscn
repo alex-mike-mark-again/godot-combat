@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://corf8pv8y5cvy"]
+
+[ext_resource type="Script" path="res://troops/troop.gd" id="1_v8mqf"]
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="2_n81ra"]
+
+[node name="stage2b" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_v8mqf")
+
+[node name="SLUSHDROP1" parent="." instance=ExtResource("2_n81ra")]
+modulate = Color(0.780392, 0.780392, 1, 0.792157)
+offset_left = 728.0
+offset_top = 131.0
+offset_right = 728.0
+offset_bottom = 131.0
+buff_hp = 3
+atk = 1
+maxHp = 5
+
+[node name="HAILSTONE1" parent="." instance=ExtResource("2_n81ra")]
+modulate = Color(0.678431, 0.678431, 0.678431, 1)
+offset_left = 360.0
+offset_top = 333.0
+offset_right = 360.0
+offset_bottom = 333.0
+buff_atk = 2
+atk = 1
+
+[node name="GUST" parent="." instance=ExtResource("2_n81ra")]
+offset_left = 948.0
+offset_top = 121.0
+offset_right = 948.0
+offset_bottom = 121.0
+buff_hp = 2
+buff_max_hp = 2

@@ -13,9 +13,9 @@ var troops = [
 #	"res://troops/three_dudes.tscn",
 #	"res://troops/one_dude.tscn",
 #	"res://troops/two_dudes.tscn",
-	"res://troops/stage1.tscn",
-	"res://troops/stage2.tscn",
-	"res://troops/stage3.tscn",
+	"res://troops/stage1b.tscn",
+	"res://troops/stage2b.tscn",
+#	"res://troops/stage3.tscn",
 ]
 
 func _ready():

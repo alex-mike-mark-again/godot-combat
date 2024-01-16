@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://5tr7ixvlx0ws"]
+
+[ext_resource type="Script" path="res://troops/troop.gd" id="1_0iy2c"]
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="2_lx3o8"]
+
+[node name="stage1b" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0iy2c")
+
+[node name="BIGCHILLIN" parent="." instance=ExtResource("2_lx3o8")]
+offset_left = 733.0
+offset_top = 120.0
+offset_right = 733.0
+offset_bottom = 120.0
+buff_hp = 6
+buff_max_hp = 5
+atk = 1
+maxHp = 5
+
+[node name="FROSTBITE" parent="." instance=ExtResource("2_lx3o8")]
+offset_left = 378.0
+offset_top = 132.0
+offset_right = 378.0
+offset_bottom = 132.0
+buff_atk = 4
+atk = 5

@@ -1,6 +1,6 @@
 extends TextureRect
 
-# also use colours from our pallete
+# TODO: also use colours from our pallete
 func play_delta_anim(delta: int):
 	var x = $current_label/delta_label.duplicate()
 	$current_label.add_child(x)
