@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkxsy0ps5udh2"]
+
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_x54mq"]
+
+[node name="gust" instance=ExtResource("1_x54mq")]
+buff_hp = 1
+buff_max_hp = 3

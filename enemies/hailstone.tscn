@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://defwgb8xknsds"]
+
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_o40an"]
+
+[node name="hailstone" instance=ExtResource("1_o40an")]
+buff_atk = 2
+atk = 1

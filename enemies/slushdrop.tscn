@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://gwetcstf73el"]
+
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_v5d7e"]
+
+[node name="slushdrop" instance=ExtResource("1_v5d7e")]
+buff_hp = 3
+atk = 1
+maxHp = 5
+
+[node name="Selector" parent="." index="2"]
+self_modulate = Color(0.705882, 1, 1, 1)
