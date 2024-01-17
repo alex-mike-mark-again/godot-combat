@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqx2euil23nku"]
+
+[ext_resource type="Script" path="res://troops/troop.gd" id="1_yvrue"]
+[ext_resource type="PackedScene" uid="uid://c1wgu6c3s50od" path="res://enemies/cloud.tscn" id="2_10acv"]
+[ext_resource type="PackedScene" uid="uid://c6mavv7w2volt" path="res://enemies/king_blizzard.tscn" id="2_wph1y"]
+[ext_resource type="PackedScene" uid="uid://b4xjqee8slcdi" path="res://enemies/snow.tscn" id="3_wcuse"]
+[ext_resource type="PackedScene" uid="uid://c21fn67qo2v8u" path="res://enemies/wind.tscn" id="4_w12el"]
+
+[node name="stage3b" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yvrue")
+
+[node name="Cloud" parent="." instance=ExtResource("2_10acv")]
+offset_left = 13.0
+offset_top = 50.0
+offset_right = 13.0
+offset_bottom = 50.0
+buff_rdc = 1
+maxHp = 1
+
+[node name="SNOW" parent="." instance=ExtResource("3_wcuse")]
+offset_left = 672.0
+offset_top = 282.0
+offset_right = 672.0
+offset_bottom = 282.0
+buff_atk = 1
+buff_hp = 1
+atk = 1
+maxHp = 4
+
+[node name="WIND" parent="." instance=ExtResource("4_w12el")]
+offset_left = 814.0
+offset_top = 60.0
+offset_right = 814.0
+offset_bottom = 60.0
+buff_rdc = 1
+buff_max_hp = 10
+
+[node name="king blizzard" parent="." instance=ExtResource("2_wph1y")]
+offset_left = 347.0
+offset_top = 277.0
+offset_right = 347.0
+offset_bottom = 277.0

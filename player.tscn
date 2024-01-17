@@ -15,7 +15,7 @@ anchors_preset = 0
 theme = ExtResource("1_t2r6v")
 script = ExtResource("1_c8ry4")
 atk = 1
-maxHp = 10
+maxHp = 5
 
 [node name="plate" type="Sprite2D" parent="."]
 texture = ExtResource("2_65d1y")
