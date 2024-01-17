@@ -38,7 +38,7 @@ func _update_displays(delta: Dictionary):
 func apply_buff(buff: Buff):
 	atk += buff.atk
 	maxHp += buff.maxHp
-	hp = min(hp+buff.maxHp+buff.hp,maxHp)
+	hp = min(hp+buff.hp,maxHp)
 	rdc += buff.rdc
 	_update_displays({
 		"atk": buff.atk,
