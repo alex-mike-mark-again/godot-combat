@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2ya1iob4yhv4"]
+
+[ext_resource type="PackedScene" uid="uid://n6rnysidrtdr" path="res://main.tscn" id="1_68gjs"]
+
+[node name="DebugMain" instance=ExtResource("1_68gjs")]
+
+[node name="BattleManager" parent="." index="0"]
+troops = ["res://troops/stage3b.tscn"]
+
+[node name="Player" parent="." index="1"]
+atk = 3
+maxHp = 10
