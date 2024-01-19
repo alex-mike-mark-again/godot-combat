@@ -2,7 +2,6 @@ extends Battler
 class_name Player
 
 var tempBuffs: Array
-var ash = 1 # determines how many buffs you get to keep after a stage. secret
 
 func _ready():
 	super._ready()
@@ -29,7 +28,7 @@ func apply_buff(buff: Buff):
 	super.apply_buff(buff)
 	
 func _gain_permanent_buffs():
-	var removals = tempBuffs.size() - ash
+	var removals = tempBuffs.size() - 1
 	for i in removals:
 		remove_buff(tempBuffs[i])
 	
