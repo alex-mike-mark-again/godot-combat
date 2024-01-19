@@ -4,4 +4,4 @@
 
 [node name="hailstone" instance=ExtResource("1_o40an")]
 buff_atk = 2
-atk = 2
+atk = 1

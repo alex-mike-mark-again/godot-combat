@@ -16,7 +16,9 @@ offset_left = 13.0
 offset_top = 50.0
 offset_right = 13.0
 offset_bottom = 50.0
-buff_rdc = 1
+buff_atk = 0
+buff_hp = 15
+buff_max_hp = 2
 maxHp = 1
 
 [node name="SNOW" parent="." instance=ExtResource("3_wcuse")]
@@ -24,18 +26,18 @@ offset_left = 672.0
 offset_top = 282.0
 offset_right = 672.0
 offset_bottom = 282.0
-buff_atk = 1
-buff_hp = 1
+buff_rdc = 1
 atk = 1
-maxHp = 4
+maxHp = 2
 
 [node name="WIND" parent="." instance=ExtResource("4_w12el")]
 offset_left = 814.0
 offset_top = 60.0
 offset_right = 814.0
 offset_bottom = 60.0
+buff_atk = 1
 buff_rdc = 1
-buff_max_hp = 10
+atk = 2
 
 [node name="king blizzard" parent="." instance=ExtResource("2_wph1y")]
 offset_left = 347.0
