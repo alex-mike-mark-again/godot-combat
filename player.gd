@@ -1,10 +1,6 @@
 extends Battler
 class_name Player
 
-@export var light_display: Label
-@export var heat_display: Label
-@export var smoke_display: Label
-
 var tempBuffs: Array
 var ash = 1 # determines how many buffs you get to keep after a stage. secret
 
