@@ -58,3 +58,17 @@ func remove_buff(buff: Buff):
 		"hp": -buff.hp, 
 		"rdc": -buff.rdc
 	})
+
+func get_stats():
+	return {
+		"atk": atk,
+		"maxHp": maxHp,
+		"hp": hp, 
+		"rdc": rdc
+	}
+	
+func set_stats(stats):
+	atk = stats.atk	
+	maxHp = stats.maxHp
+	hp = stats.hp
+	rdc = stats.rdc

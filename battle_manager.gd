@@ -1,13 +1,17 @@
 extends Node
+class_name BattleManager
 
 var selected = null
 var enemies
-var player
+var prevPlayerStats
 var globals
 var currentTroop
 var battleCount = 0
 var turnsTaken = 0
 var clickOn = true
+@export var gameOver: Node
+@export var player: Node
+
 
 @export var troops = [
 #	"res://troops/three_dudes.tscn",
@@ -19,9 +23,8 @@ var clickOn = true
 ]
 
 func _ready():
-	advance_to_next_stage()
-	player = get_node("../Player")
 	globals = get_node("/root/Globals")
+	advance_to_next_stage()
 
 func on_select(e):
 	if !clickOn:
@@ -51,7 +54,7 @@ func _battle():
 	
 func _check_end_of_battle():
 	if player.dead:
-		get_tree().change_scene_to_file("res://game_over.tscn")
+		gameOver.show()
 		
 	if _player_win():
 		player.on_victory()
@@ -76,6 +79,8 @@ func on_enemy_killed(e):
 
 func advance_to_next_stage():
 	# get rid of defeated troop
+	prevPlayerStats = player.get_stats()
+	
 	if currentTroop:
 		remove_child(currentTroop)
 		currentTroop.queue_free()
@@ -94,3 +99,10 @@ func advance_to_next_stage():
 	else:
 		return false
 		
+
+func retry():
+	player.set_stats(prevPlayerStats)
+	player.dead = false
+	player._update_displays({})
+	battleCount-=1
+	advance_to_next_stage()
