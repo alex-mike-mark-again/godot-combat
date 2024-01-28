@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cos6h4mxv7pqf"]
+
+[ext_resource type="Script" path="res://troops/troop.gd" id="1_okyjk"]
+[ext_resource type="PackedScene" uid="uid://wu338vqhnnxg" path="res://enemies/titan_soul_face.tscn" id="2_12okc"]
+[ext_resource type="PackedScene" uid="uid://bg7mv3tjry87j" path="res://enemies/titan_soul_horns.tscn" id="3_3qshb"]
+[ext_resource type="PackedScene" uid="uid://ddknbnnun8ckc" path="res://enemies/titan_soul_jacket.tscn" id="4_0d1nu"]
+[ext_resource type="PackedScene" uid="uid://dfa44hyyci7y3" path="res://enemies/titan_soul_wound.tscn" id="5_giacm"]
+
+[node name="stage4b" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_okyjk")
+
+[node name="Titan Soul Face" parent="." instance=ExtResource("2_12okc")]
+offset_left = 605.0
+offset_top = 118.0
+offset_right = 605.0
+offset_bottom = 118.0
+buff_atk = 3
+buff_hp = 0
+atk = 1
+maxHp = 5
+
+[node name="Titan Soul Horns" parent="." instance=ExtResource("3_3qshb")]
+offset_left = 305.0
+offset_top = 111.0
+offset_right = 305.0
+offset_bottom = 111.0
+buff_atk = 2
+buff_hp = 3
+buff_rdc = 2
+buff_max_hp = 10
+atk = 1
+maxHp = 15
+
+[node name="Titan Soul Jacket" parent="." instance=ExtResource("4_0d1nu")]
+offset_left = 237.0
+offset_top = 296.0
+offset_right = 237.0
+offset_bottom = 296.0
+buff_hp = 3
+buff_rdc = 3
+buff_max_hp = 5
+maxHp = 10
+
+[node name="Titan Soul Wound" parent="." instance=ExtResource("5_giacm")]
+offset_left = 683.0
+offset_top = 303.0
+offset_right = 683.0
+offset_bottom = 303.0
+buff_hp = 10
+buff_max_hp = 10
+maxHp = 2
