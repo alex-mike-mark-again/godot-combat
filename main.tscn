@@ -10,7 +10,7 @@
 script = ExtResource("4_qqxit")
 gameOver = NodePath("game_over")
 player = NodePath("Player")
-troops = ["res://troops/stage1b.tscn", "res://troops/stage2b.tscn", "res://troops/stage3b.tscn", "res://troops/stage4b.tscn"]
+troops = ["res://troops/stage1b.tscn", "res://troops/stage2b.tscn", "res://troops/stage3b.tscn", "res://troops/stage4b.tscn", "res://troops/stage5b.tscn"]
 
 [node name="game_over" parent="BattleManager" node_paths=PackedStringArray("battle_manager") instance=ExtResource("1_01dvc")]
 visible = false
