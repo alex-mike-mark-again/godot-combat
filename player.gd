@@ -32,4 +32,7 @@ func _gain_permanent_buffs():
 	for i in removals:
 		remove_buff(tempBuffs[i])
 	
+	clear_buffs()
+
+func clear_buffs():
 	tempBuffs = []

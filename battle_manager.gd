@@ -101,7 +101,9 @@ func advance_to_next_stage():
 		
 
 func retry():
+	# This should really all be in the player
 	player.set_stats(prevPlayerStats)
+	player.clear_buffs()
 	player.dead = false
 	player._update_displays({})
 	battleCount-=1
