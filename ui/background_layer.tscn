@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cflm1sckvoqrl"]
+
+[ext_resource type="Shader" path="res://ui/background.gdshader" id="1_evj6k"]
+[ext_resource type="Script" path="res://ui/background_layer.gd" id="2_wjnh1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0smv"]
+shader = ExtResource("1_evj6k")
+shader_parameter/scroll_speed = 0.5
+
+[node name="TextureRect" type="TextureRect"]
+material = SubResource("ShaderMaterial_s0smv")
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+script = ExtResource("2_wjnh1")
