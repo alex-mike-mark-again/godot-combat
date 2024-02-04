@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://defwgb8xknsds" path="res://enemies/hailstone.tscn" id="4_4yp0l"]
 [ext_resource type="Texture2D" uid="uid://cdb5u8juyrcp4" path="res://sprites/bg_thick_wind.png" id="4_bh4jy"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b03tk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lo3q5"]
 resource_local_to_scene = true
 shader = ExtResource("3_gy7hn")
 shader_parameter/scroll_speed = 0.5
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tfblv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m3d8v"]
 resource_local_to_scene = true
 shader = ExtResource("3_gy7hn")
 shader_parameter/scroll_speed = 0.5
@@ -28,20 +28,20 @@ script = ExtResource("1_v8mqf")
 
 [node name="TextureRect" parent="backgrounds" instance=ExtResource("2_663fn")]
 z_index = -1
-material = SubResource("ShaderMaterial_b03tk")
+material = SubResource("ShaderMaterial_lo3q5")
 offset_right = 1153.0
 offset_bottom = 646.0
 texture = ExtResource("3_y1re3")
 scroll_speed = 0.6
 
 [node name="TextureRect2" parent="backgrounds" instance=ExtResource("2_663fn")]
-material = SubResource("ShaderMaterial_tfblv")
+material = SubResource("ShaderMaterial_m3d8v")
 offset_left = 1.0
 offset_top = 3.0
 offset_right = 1154.0
 offset_bottom = 648.0
 texture = ExtResource("4_bh4jy")
-scroll_speed = 0.5
+scroll_speed = 0.2
 
 [node name="enemies" type="Node" parent="."]
 
