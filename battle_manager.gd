@@ -13,14 +13,7 @@ var clickOn = true
 @export var player: Node
 
 
-@export var troops = [
-#	"res://troops/three_dudes.tscn",
-#	"res://troops/one_dude.tscn",
-#	"res://troops/two_dudes.tscn",
-	"res://troops/stage1b.tscn",
-	"res://troops/stage2b.tscn",
-	"res://troops/stage3b.tscn",
-]
+@export var troops = []
 
 func _ready():
 	globals = get_node("/root/Globals")
