@@ -10,49 +10,51 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_v8mqf")
 
-[node name="slushdrop3" parent="." instance=ExtResource("2_mxs6i")]
+[node name="enemies" type="Node" parent="."]
+
+[node name="slushdrop3" parent="enemies" instance=ExtResource("2_mxs6i")]
 offset_left = 226.0
 offset_top = 74.0
 offset_right = 226.0
 offset_bottom = 74.0
 
-[node name="slushdrop2" parent="." instance=ExtResource("2_mxs6i")]
+[node name="slushdrop2" parent="enemies" instance=ExtResource("2_mxs6i")]
 offset_left = 591.0
 offset_top = 65.0
 offset_right = 591.0
 offset_bottom = 65.0
 
-[node name="slushdrop" parent="." instance=ExtResource("2_mxs6i")]
+[node name="slushdrop" parent="enemies" instance=ExtResource("2_mxs6i")]
 offset_left = 407.0
 offset_top = 262.0
 offset_right = 407.0
 offset_bottom = 262.0
 
-[node name="gust" parent="." instance=ExtResource("2_s0el4")]
+[node name="gust" parent="enemies" instance=ExtResource("2_s0el4")]
 offset_left = 782.0
 offset_top = 255.0
 offset_right = 782.0
 offset_bottom = 255.0
 
-[node name="gust2" parent="." instance=ExtResource("2_s0el4")]
+[node name="gust2" parent="enemies" instance=ExtResource("2_s0el4")]
 offset_left = 783.0
 offset_top = 66.0
 offset_right = 783.0
 offset_bottom = 66.0
 
-[node name="hailstone" parent="." instance=ExtResource("4_4yp0l")]
+[node name="hailstone" parent="enemies" instance=ExtResource("4_4yp0l")]
 offset_left = 221.0
 offset_top = 259.0
 offset_right = 221.0
 offset_bottom = 259.0
 
-[node name="hailstone2" parent="." instance=ExtResource("4_4yp0l")]
+[node name="hailstone2" parent="enemies" instance=ExtResource("4_4yp0l")]
 offset_left = 414.0
 offset_top = 70.0
 offset_right = 414.0
 offset_bottom = 70.0
 
-[node name="hailstone3" parent="." instance=ExtResource("4_4yp0l")]
+[node name="hailstone3" parent="enemies" instance=ExtResource("4_4yp0l")]
 offset_left = 592.0
 offset_top = 246.0
 offset_right = 592.0

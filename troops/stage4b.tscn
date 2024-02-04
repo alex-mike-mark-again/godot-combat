@@ -11,7 +11,9 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_okyjk")
 
-[node name="Titan Soul Face" parent="." instance=ExtResource("2_12okc")]
+[node name="enemies" type="Node" parent="."]
+
+[node name="Titan Soul Face" parent="enemies" instance=ExtResource("2_12okc")]
 offset_left = 605.0
 offset_top = 118.0
 offset_right = 605.0
@@ -21,7 +23,7 @@ buff_hp = 0
 atk = 1
 maxHp = 5
 
-[node name="Titan Soul Horns" parent="." instance=ExtResource("3_3qshb")]
+[node name="Titan Soul Horns" parent="enemies" instance=ExtResource("3_3qshb")]
 offset_left = 305.0
 offset_top = 111.0
 offset_right = 305.0
@@ -33,7 +35,7 @@ buff_max_hp = 10
 atk = 1
 maxHp = 15
 
-[node name="Titan Soul Jacket" parent="." instance=ExtResource("4_0d1nu")]
+[node name="Titan Soul Jacket" parent="enemies" instance=ExtResource("4_0d1nu")]
 offset_left = 237.0
 offset_top = 296.0
 offset_right = 237.0
@@ -43,7 +45,7 @@ buff_rdc = 3
 buff_max_hp = 5
 maxHp = 10
 
-[node name="Titan Soul Wound" parent="." instance=ExtResource("5_giacm")]
+[node name="Titan Soul Wound" parent="enemies" instance=ExtResource("5_giacm")]
 offset_left = 683.0
 offset_top = 303.0
 offset_right = 683.0

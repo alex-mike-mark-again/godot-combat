@@ -8,7 +8,9 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_0iy2c")
 
-[node name="BIGCHILLIN" parent="." instance=ExtResource("2_lx3o8")]
+[node name="enemies" type="Node" parent="."]
+
+[node name="BIGCHILLIN" parent="enemies" instance=ExtResource("2_lx3o8")]
 offset_left = 733.0
 offset_top = 120.0
 offset_right = 733.0
@@ -18,7 +20,7 @@ buff_max_hp = 5
 atk = 1
 maxHp = 5
 
-[node name="FROSTBITE" parent="." instance=ExtResource("2_lx3o8")]
+[node name="FROSTBITE" parent="enemies" instance=ExtResource("2_lx3o8")]
 offset_left = 378.0
 offset_top = 132.0
 offset_right = 378.0
