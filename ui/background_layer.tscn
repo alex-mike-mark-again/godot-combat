@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://ui/background_layer.gd" id="2_wjnh1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s0smv"]
+resource_local_to_scene = true
 shader = ExtResource("1_evj6k")
 shader_parameter/scroll_speed = 0.5
 
