@@ -82,7 +82,8 @@ func advance_to_next_stage():
 	if battleCount < troops.size():
 		# THIS chunk is what loads the next battle.
 		currentTroop = load(troops[battleCount]).instantiate()
-		add_child(currentTroop) #oh. almost certainly loads this. under the player
+		add_child(currentTroop)
+		move_child(currentTroop,0)
 		enemies = currentTroop.get_enemies()
 		for enemy in enemies:
 			enemy.selected.connect(on_select)
