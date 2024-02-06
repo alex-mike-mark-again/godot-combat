@@ -17,7 +17,7 @@ shader_parameter/scroll_speed = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0exfn"]
 shader = ExtResource("5_r3trq")
-shader_parameter/x_scroll = 0.1
+shader_parameter/x_scroll = 1.2
 shader_parameter/y_scroll = 0.2
 
 [node name="stage2b" type="Control"]
@@ -36,6 +36,7 @@ texture = ExtResource("3_y1re3")
 scroll_speed = 0.1
 
 [node name="TextureRect2" parent="backgrounds" instance=ExtResource("2_663fn")]
+z_index = -1
 material = SubResource("ShaderMaterial_0exfn")
 offset_left = 1.0
 offset_top = 3.0

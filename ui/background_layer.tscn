@@ -8,7 +8,8 @@ resource_local_to_scene = true
 shader = ExtResource("1_evj6k")
 shader_parameter/scroll_speed = 0.5
 
-[node name="TextureRect" type="TextureRect"]
+[node name="BackgroundLayer" type="TextureRect"]
+z_index = -1
 material = SubResource("ShaderMaterial_s0smv")
 offset_right = 40.0
 offset_bottom = 40.0
