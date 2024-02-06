@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://corf8pv8y5cvy"]
+[gd_scene load_steps=12 format=3 uid="uid://corf8pv8y5cvy"]
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_v8mqf"]
 [ext_resource type="PackedScene" uid="uid://cflm1sckvoqrl" path="res://ui/background_layer.tscn" id="2_663fn"]
@@ -8,16 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://ty60mxrym6wu" path="res://sprites/bg_thin_wind.png" id="3_y1re3"]
 [ext_resource type="PackedScene" uid="uid://defwgb8xknsds" path="res://enemies/hailstone.tscn" id="4_4yp0l"]
 [ext_resource type="Texture2D" uid="uid://cdb5u8juyrcp4" path="res://sprites/bg_thick_wind.png" id="4_bh4jy"]
+[ext_resource type="Shader" path="res://ui/scrap.gdshader" id="5_r3trq"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lo3q5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u2c0e"]
 resource_local_to_scene = true
 shader = ExtResource("3_gy7hn")
 shader_parameter/scroll_speed = 0.5
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m3d8v"]
-resource_local_to_scene = true
-shader = ExtResource("3_gy7hn")
-shader_parameter/scroll_speed = 0.5
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0exfn"]
+shader = ExtResource("5_r3trq")
+shader_parameter/x_scroll = 0.1
+shader_parameter/y_scroll = 0.2
 
 [node name="stage2b" type="Control"]
 layout_mode = 3
@@ -28,14 +29,14 @@ script = ExtResource("1_v8mqf")
 
 [node name="TextureRect" parent="backgrounds" instance=ExtResource("2_663fn")]
 z_index = -1
-material = SubResource("ShaderMaterial_lo3q5")
+material = SubResource("ShaderMaterial_u2c0e")
 offset_right = 1153.0
 offset_bottom = 646.0
 texture = ExtResource("3_y1re3")
-scroll_speed = 0.6
+scroll_speed = 0.1
 
 [node name="TextureRect2" parent="backgrounds" instance=ExtResource("2_663fn")]
-material = SubResource("ShaderMaterial_m3d8v")
+material = SubResource("ShaderMaterial_0exfn")
 offset_left = 1.0
 offset_top = 3.0
 offset_right = 1154.0
