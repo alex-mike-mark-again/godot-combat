@@ -34,5 +34,7 @@ offset_left = 715.0
 offset_top = 248.0
 offset_right = 715.0
 offset_bottom = 248.0
+buff_atk = 1
+buff_hp = 10
 atk = 2
 maxHp = 10

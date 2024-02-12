@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmm60lacs8as5"]
+
+[ext_resource type="Script" path="res://troops/troop.gd" id="1_lcfo0"]
+[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="2_04eht"]
+
+[node name="stage4half" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lcfo0")
+
+[node name="bg" type="Node" parent="."]
+
+[node name="enemies" type="Node" parent="."]
+
+[node name="gimme heat" parent="enemies" instance=ExtResource("2_04eht")]
+offset_left = 483.0
+offset_top = 129.0
+offset_right = 483.0
+offset_bottom = 129.0
+buff_atk = 3
+buff_rdc = -1
+
+[node name="gimme smoke" parent="enemies" instance=ExtResource("2_04eht")]
+offset_left = 852.0
+offset_top = 148.0
+offset_right = 852.0
+offset_bottom = 148.0
+buff_rdc = 1
+buff_max_hp = -10
+
+[node name="gimme light" parent="enemies" instance=ExtResource("2_04eht")]
+offset_left = 135.0
+offset_top = 139.0
+offset_right = 135.0
+offset_bottom = 139.0
+buff_atk = -2
+buff_hp = 10
+buff_max_hp = 10
