@@ -17,7 +17,9 @@ var clickOn = true
 
 func _ready():
 	globals = get_node("/root/Globals")
-	advance_to_next_stage()
+	on_player_stage_win()
+	load_current_troop()
+	$next_button.hide()
 
 func on_select(e):
 	if !clickOn:
@@ -51,7 +53,7 @@ func _check_end_of_battle():
 		
 	if _player_win():
 		player.on_victory()
-		if !advance_to_next_stage(): #this is kinda weird looking
+		if !on_player_stage_win(): #this is kinda weird looking
 			globals.finalTurns = turnsTaken
 			globals.finalLight = player.hp
 			get_tree().change_scene_to_file("res://game_won.tscn")
@@ -70,28 +72,29 @@ func _all_enemies_killed():
 func on_enemy_killed(e):
 	player.apply_buff(e.buff)
 
-func advance_to_next_stage():
-	# get rid of defeated troop
+func on_player_stage_win():
 	prevPlayerStats = player.get_stats()
+	$next_button.show()
 	
 	if currentTroop:
 		remove_child(currentTroop)
 		currentTroop.queue_free()
-	
-	# if there are troops left, load 'em.
+		
 	if battleCount < troops.size():
 		# THIS chunk is what loads the next battle.
 		currentTroop = load(troops[battleCount]).instantiate()
-		add_child(currentTroop)
-		move_child(currentTroop,0)
-		enemies = currentTroop.get_enemies()
-		for enemy in enemies:
-			enemy.selected.connect(on_select)
-			enemy.died.connect(on_enemy_killed)
 		battleCount+=1
 		return true
 	else:
 		return false
+	
+func load_current_troop():
+	add_child(currentTroop)
+	move_child(currentTroop,0)
+	enemies = currentTroop.get_enemies()
+	for enemy in enemies:
+		enemy.selected.connect(on_select)
+		enemy.died.connect(on_enemy_killed)
 		
 
 func retry():
@@ -101,4 +104,9 @@ func retry():
 	player.dead = false
 	player._update_displays({})
 	battleCount-=1
-	advance_to_next_stage()
+	load_current_troop()
+
+
+func _on_next_button_pressed():
+	$next_button.hide()
+	load_current_troop()
