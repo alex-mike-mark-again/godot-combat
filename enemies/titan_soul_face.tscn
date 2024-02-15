@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://wu338vqhnnxg"]
+[gd_scene load_steps=3 format=3 uid="uid://wu338vqhnnxg"]
 
 [ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_fkdwh"]
+[ext_resource type="Texture2D" uid="uid://tct8ruxr72xk" path="res://sprites/spirit_face.png" id="2_xng4h"]
 
 [node name="Titan Soul Face" instance=ExtResource("1_fkdwh")]
 buff_atk = 1
@@ -8,3 +9,15 @@ buff_hp = 2
 buff_rdc = 1
 atk = 2
 maxHp = 6
+
+[node name="bite" parent="Labels" index="0"]
+anchors_preset = 3
+
+[node name="chill" parent="Labels" index="1"]
+anchors_preset = 2
+
+[node name="Selector" parent="." index="2"]
+offset_right = 583.0
+offset_bottom = 616.0
+scale = Vector2(0.27, 0.27)
+icon = ExtResource("2_xng4h")

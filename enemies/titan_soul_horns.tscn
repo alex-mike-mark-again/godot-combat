@@ -1,9 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bg7mv3tjry87j"]
+[gd_scene load_steps=3 format=3 uid="uid://bg7mv3tjry87j"]
 
 [ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_oegm2"]
+[ext_resource type="Texture2D" uid="uid://v6gva4lgmmkb" path="res://sprites/spirit_horns.png" id="2_x3vwe"]
 
 [node name="Titan Soul Horns" instance=ExtResource("1_oegm2")]
 buff_atk = 1
 buff_rdc = 1
 atk = 2
 maxHp = 6
+
+[node name="bite" parent="Labels" index="0"]
+anchors_preset = 3
+
+[node name="chill" parent="Labels" index="1"]
+anchors_preset = 2
+
+[node name="Selector" parent="." index="2"]
+offset_right = 886.0
+offset_bottom = 694.0
+scale = Vector2(0.245, 0.245)
+icon = ExtResource("2_x3vwe")
