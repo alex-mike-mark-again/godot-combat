@@ -47,8 +47,8 @@ func die():
 	hide()
 
 func _update_displays(delta: Dictionary):
-	hpLabel.text = "hp: "+str(hp)
-	atkLabel.text = "atk: "+str(atk)
+	hpLabel.text = str(hp)
+	atkLabel.text = str(atk)
 
 func take_damage(damage: int):
 	super.take_damage(damage)
@@ -62,6 +62,10 @@ func attack_vfx():
 
 func _on_selector_mouse_entered():
 	buff_display.show()
+	nameLabel.hide()
+	
 
 func _on_selector_mouse_exited():
 	buff_display.hide()
+	nameLabel.show()
+	

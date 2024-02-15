@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cdb5u8juyrcp4" path="res://sprites/bg_thick_wind.png" id="4_bh4jy"]
 [ext_resource type="Shader" path="res://ui/scrap.gdshader" id="5_r3trq"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_foksn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s7qdw"]
 resource_local_to_scene = true
 shader = ExtResource("3_gy7hn")
 shader_parameter/scroll_speed = 0.5
@@ -28,7 +28,7 @@ script = ExtResource("1_v8mqf")
 [node name="backgrounds" type="Node" parent="."]
 
 [node name="TextureRect" parent="backgrounds" instance=ExtResource("2_663fn")]
-material = SubResource("ShaderMaterial_foksn")
+material = SubResource("ShaderMaterial_s7qdw")
 offset_right = 1153.0
 offset_bottom = 646.0
 texture = ExtResource("3_y1re3")

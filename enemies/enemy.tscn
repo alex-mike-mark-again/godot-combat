@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://d15w3qccq2gc8"]
+[gd_scene load_steps=22 format=3 uid="uid://d15w3qccq2gc8"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_tnjn8"]
 [ext_resource type="Texture2D" uid="uid://djvdh44acre7u" path="res://icon.svg" id="2_1djyi"]
+[ext_resource type="Texture2D" uid="uid://ccqnq4mbewa0f" path="res://sprites/bite_icon.png" id="2_1rsdl"]
+[ext_resource type="Texture2D" uid="uid://clxysivkgk2qd" path="res://sprites/chill_icon.png" id="2_rgbfh"]
 [ext_resource type="AudioStream" uid="uid://cld5r8yhfux07" path="res://sfx/punch-3-166696.mp3" id="3_hj6iw"]
 [ext_resource type="AudioStream" uid="uid://canfinpfol2qf" path="res://sfx/punch-6-166699.mp3" id="4_6k7hd"]
 [ext_resource type="Script" path="res://themes/buff_display.gd" id="5_7c0xw"]
@@ -148,8 +150,8 @@ Button/styles/pressed = SubResource("StyleBoxFlat_f4x4b")
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_tnjn8")
-hpLabel = NodePath("Labels/HP Label")
-atkLabel = NodePath("Labels/ATK Label")
+hpLabel = NodePath("Labels/chill/HP Label")
+atkLabel = NodePath("Labels/bite/ATK Label")
 buff_display = NodePath("Labels/Buff Display")
 nameLabel = NodePath("Labels/Name Label")
 animationPlayer = NodePath("AnimationPlayer")
@@ -160,15 +162,71 @@ libraries = {
 }
 
 [node name="Labels" type="Control" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 0
 offset_top = -20.0
 offset_right = 136.0
-offset_bottom = 116.0
+offset_bottom = 139.0
+
+[node name="bite" type="Control" parent="Labels"]
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Labels/bite"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -5.0
+offset_right = 65.0
+offset_bottom = 55.0
+texture = ExtResource("2_1rsdl")
+
+[node name="ATK Label" type="Label" parent="Labels/bite"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -9.0
+offset_top = 10.0
+offset_right = 1.0
+offset_bottom = 36.0
+grow_horizontal = 0
+text = "0	"
+
+[node name="chill" type="Control" parent="Labels"]
+layout_mode = 1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -20.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Labels/chill"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -11.0
+offset_right = 47.0
+offset_bottom = 49.0
+texture = ExtResource("2_rgbfh")
+
+[node name="HP Label" type="Label" parent="Labels/chill"]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 36.0
+text = "0"
 
 [node name="Buff Display" type="Control" parent="Labels" node_paths=PackedStringArray("light_label", "heat_label", "smoke_label")]
 visible = false
-z_index = 2
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -294,30 +352,15 @@ grow_vertical = 2
 theme = ExtResource("7_8ljos")
 text = "X"
 
-[node name="HP Label" type="Label" parent="Labels"]
-layout_mode = 1
-offset_right = 40.0
-offset_bottom = 26.0
-text = "HPPPPP"
-
-[node name="ATK Label" type="Label" parent="Labels"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 26.0
-grow_horizontal = 0
-text = "ATK"
-
 [node name="Name Label" type="Label" parent="Labels"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -62.0
-offset_top = -30.0
-offset_right = 62.0
+offset_left = -63.0
+offset_top = 3.0
+offset_right = 61.0
+offset_bottom = 33.0
 grow_horizontal = 2
 text = "[name]"
 horizontal_alignment = 1

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://3hf640ilrex4" path="res://sprites/bg_temple_far.png" id="4_khw0y"]
 [ext_resource type="PackedScene" uid="uid://c21fn67qo2v8u" path="res://enemies/wind.tscn" id="4_w12el"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekl6e"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_krr61"]
 resource_local_to_scene = true
 shader = ExtResource("3_j7dfw")
 shader_parameter/scroll_speed = 0.5
@@ -24,7 +24,7 @@ script = ExtResource("1_yvrue")
 [node name="BackgroundLayer2" parent="background" instance=ExtResource("2_i6cx6")]
 modulate = Color(1, 1, 0.858824, 0.466667)
 self_modulate = Color(0.129412, 0.14902, 0.560784, 0.752941)
-material = SubResource("ShaderMaterial_ekl6e")
+material = SubResource("ShaderMaterial_krr61")
 offset_right = 1152.0
 offset_bottom = 600.0
 texture = ExtResource("4_khw0y")
