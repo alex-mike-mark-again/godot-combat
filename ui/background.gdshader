@@ -1,5 +1,6 @@
 shader_type canvas_item;
 uniform float scroll_speed;
+uniform float transparency = 1.0;
 
 void fragment() {
 	vec2 shifteduv = UV;

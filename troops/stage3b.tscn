@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqx2euil23nku"]
+[gd_scene load_steps=13 format=3 uid="uid://bqx2euil23nku"]
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_yvrue"]
 [ext_resource type="PackedScene" uid="uid://c1wgu6c3s50od" path="res://enemies/cloud.tscn" id="2_10acv"]
@@ -8,11 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://b4xjqee8slcdi" path="res://enemies/snow.tscn" id="3_wcuse"]
 [ext_resource type="Texture2D" uid="uid://3hf640ilrex4" path="res://sprites/bg_temple_far.png" id="4_khw0y"]
 [ext_resource type="PackedScene" uid="uid://c21fn67qo2v8u" path="res://enemies/wind.tscn" id="4_w12el"]
+[ext_resource type="Shader" path="res://ui/2d_scrolling.gdshader" id="5_dlefm"]
+[ext_resource type="Texture2D" uid="uid://bm116usmftebm" path="res://sprites/bg_swirly_snow.png" id="6_uyp3w"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_krr61"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5hms"]
 resource_local_to_scene = true
 shader = ExtResource("3_j7dfw")
 shader_parameter/scroll_speed = 0.5
+shader_parameter/transparency = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jt6nx"]
+shader = ExtResource("5_dlefm")
+shader_parameter/scroll_speed = 0.4
+shader_parameter/direction = Vector2(1, -4)
 
 [node name="stage3b" type="Control"]
 layout_mode = 3
@@ -24,7 +32,7 @@ script = ExtResource("1_yvrue")
 [node name="BackgroundLayer2" parent="background" instance=ExtResource("2_i6cx6")]
 modulate = Color(1, 1, 0.858824, 0.466667)
 self_modulate = Color(0.129412, 0.14902, 0.560784, 0.752941)
-material = SubResource("ShaderMaterial_krr61")
+material = SubResource("ShaderMaterial_k5hms")
 offset_right = 1152.0
 offset_bottom = 600.0
 texture = ExtResource("4_khw0y")
@@ -32,10 +40,17 @@ scroll_speed = 0.1
 
 [node name="BackgroundLayer" parent="background" instance=ExtResource("2_i6cx6")]
 material = null
-offset_top = 43.0
+offset_top = 52.0
 offset_right = 1152.0
-offset_bottom = 643.0
+offset_bottom = 652.0
 texture = ExtResource("4_khw0y")
+script = null
+
+[node name="BackgroundLayer3" parent="background" instance=ExtResource("2_i6cx6")]
+material = SubResource("ShaderMaterial_jt6nx")
+offset_right = 1162.0
+offset_bottom = 648.0
+texture = ExtResource("6_uyp3w")
 script = null
 
 [node name="enemies" type="Node" parent="."]
