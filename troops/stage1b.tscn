@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://5tr7ixvlx0ws"]
+[gd_scene load_steps=10 format=3 uid="uid://5tr7ixvlx0ws"]
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_0iy2c"]
 [ext_resource type="PackedScene" uid="uid://cflm1sckvoqrl" path="res://ui/background_layer.tscn" id="2_iyebe"]
@@ -6,16 +6,19 @@
 [ext_resource type="Shader" path="res://ui/background.gdshader" id="3_o8glo"]
 [ext_resource type="Texture2D" uid="uid://ch8dyx6fiqyjh" path="res://sprites/bg_cell_grid.png" id="4_5abss"]
 [ext_resource type="Texture2D" uid="uid://crsqdtsyoglrl" path="res://sprites/bg_windows.png" id="4_eynfx"]
+[ext_resource type="Texture2D" uid="uid://rcjoqrya5n1s" path="res://sprites/goblin_frostbite.png" id="7_fitlv"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vsqnt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_76eym"]
 resource_local_to_scene = true
 shader = ExtResource("3_o8glo")
 shader_parameter/scroll_speed = 0.5
+shader_parameter/transparency = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dym4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1h3a8"]
 resource_local_to_scene = true
 shader = ExtResource("3_o8glo")
 shader_parameter/scroll_speed = 0.5
+shader_parameter/transparency = 1.0
 
 [node name="stage1b" type="Control"]
 layout_mode = 3
@@ -31,7 +34,7 @@ offset_bottom = 657.0
 color = Color(0.32549, 0.360784, 0.662745, 1)
 
 [node name="BackgroundLayer2" parent="background" instance=ExtResource("2_iyebe")]
-material = SubResource("ShaderMaterial_vsqnt")
+material = SubResource("ShaderMaterial_76eym")
 offset_right = 1148.0
 offset_bottom = 639.0
 texture = ExtResource("4_eynfx")
@@ -39,7 +42,7 @@ scroll_speed = 0.5
 
 [node name="BackgroundLayer3" parent="background" instance=ExtResource("2_iyebe")]
 modulate = Color(0.321569, 0.34902, 1, 1)
-material = SubResource("ShaderMaterial_4dym4")
+material = SubResource("ShaderMaterial_1h3a8")
 offset_right = 1165.0
 offset_bottom = 651.0
 texture = ExtResource("4_5abss")
@@ -64,3 +67,17 @@ offset_right = 378.0
 offset_bottom = 132.0
 buff_atk = 4
 atk = 5
+
+[node name="bite" parent="enemies/FROSTBITE/Labels" index="0"]
+anchors_preset = 3
+
+[node name="chill" parent="enemies/FROSTBITE/Labels" index="1"]
+anchors_preset = 2
+
+[node name="Selector" parent="enemies/FROSTBITE" index="2"]
+offset_right = 2454.0
+offset_bottom = 2818.0
+scale = Vector2(0.105, 0.105)
+icon = ExtResource("7_fitlv")
+
+[editable path="enemies/FROSTBITE"]
