@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://n6rnysidrtdr"]
+[gd_scene load_steps=5 format=3 uid="uid://n6rnysidrtdr"]
 
 [ext_resource type="PackedScene" uid="uid://m54xv0p7docx" path="res://game_over.tscn" id="1_01dvc"]
+[ext_resource type="Script" path="res://main.gd" id="1_yucwt"]
 [ext_resource type="PackedScene" uid="uid://d4fksgdv4turk" path="res://player.tscn" id="2_ie8iv"]
 [ext_resource type="Script" path="res://battle_manager.gd" id="4_qqxit"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Control" node_paths=PackedStringArray("bm")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yucwt")
+bm = NodePath("BattleManager")
 
 [node name="BattleManager" type="Node" parent="." node_paths=PackedStringArray("gameOver", "player")]
 script = ExtResource("4_qqxit")

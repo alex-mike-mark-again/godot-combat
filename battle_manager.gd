@@ -49,9 +49,8 @@ func _check_end_of_battle():
 		gameOver.show()
 
 	if _player_win():
-		player.on_victory()
-		if !on_player_stage_win(): #this is kinda weird looking
-			get_tree().change_scene_to_file("res://game_won.tscn")
+		on_player_stage_win()
+			
 
 func _player_win():
 	return _all_enemies_killed()
@@ -67,28 +66,23 @@ func _all_enemies_killed():
 func on_enemy_killed(e):
 	player.apply_buff(e.buff)
 
-# TODO: Redo this end of stage stuff again.
-# on_player_stage_win should just. display the next button
-# get the player stats, display the troop's victory screen.
-# advance_to_next_stage SHOULD be what's called on the button press.
-# and that should unload the troop, load the new one, etc.
 func on_player_stage_win():
+	player.on_victory()
 	prevPlayerStats = player.get_stats()
 	$next_button.show()
 
+func load_current_troop():
 	if currentTroop:
 		remove_child(currentTroop)
 		currentTroop.queue_free()
-
+	
 	if battleCount < troops.size():
 		# THIS chunk is what loads the next battle.
 		currentTroop = load(troops[battleCount]).instantiate()
 		battleCount+=1
-		return true
 	else:
-		return false
-
-func load_current_troop():
+		get_tree().change_scene_to_file("res://game_won.tscn")
+	
 	add_child(currentTroop)
 	move_child(currentTroop,0)
 	enemies = currentTroop.get_enemies()
