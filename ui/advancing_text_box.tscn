@@ -3,5 +3,6 @@
 [ext_resource type="Script" path="res://ui/advancing_text_box.gd" id="1_nk2h2"]
 
 [node name="advancing_text_box" type="Label"]
+autowrap_mode = 2
 script = ExtResource("1_nk2h2")
 text_list = Array[String]([""])

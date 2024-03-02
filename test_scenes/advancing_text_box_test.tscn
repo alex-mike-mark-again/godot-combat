@@ -14,12 +14,12 @@ script = ExtResource("1_k8a0p")
 
 [node name="VSplitContainer" type="VSplitContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 572.0
+offset_bottom = 66.0
 
 [node name="advancing_text_box" parent="VSplitContainer" instance=ExtResource("1_jrqoh")]
 layout_mode = 2
-text_list = Array[String](["This is a test.", "How cool is this test.", "\\nThis line broke.", "This line is really long or something idk buddy. Normally we'd do this by the sentence but! Who cares.", "This is the last element so the text will dissapear after you hit the button again."])
+text_list = Array[String](["This is a test.\\n", "How cool is this test", "\\nThis line broke.", "This line is really long or something idk buddy. Normally we'd do this by the sentence but! Who cares.", "This is the last element so the text will dissapear after you hit the button again.", ""])
 
 [node name="Button" type="Button" parent="VSplitContainer"]
 layout_mode = 2
