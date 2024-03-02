@@ -44,4 +44,6 @@ offset_right = 594.0
 offset_bottom = 510.0
 text = "Next Stage	"
 
+[connection signal="player_lost" from="BattleManager" to="." method="_on_battle_manager_player_lost"]
+[connection signal="player_won" from="BattleManager" to="." method="_on_battle_manager_player_won"]
 [connection signal="pressed" from="BattleManager/next_button" to="BattleManager" method="_on_next_button_pressed"]

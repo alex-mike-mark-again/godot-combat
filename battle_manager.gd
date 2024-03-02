@@ -8,13 +8,14 @@ var battleCount = 0
 var clickOn = true
 @export var gameOver: Node
 @export var player: Node
-
 @export var troops = []
+
+signal player_won
+signal player_lost
 
 func _ready():
 	on_player_stage_win()
 	load_current_troop()
-	$next_button.hide()
 
 func on_select(e):
 	if !clickOn:
@@ -43,7 +44,7 @@ func _battle():
 
 func _check_end_of_battle():
 	if player.dead:
-		gameOver.show()
+		player_lost.emit()
 
 	if _player_win():
 		on_player_stage_win()
@@ -64,7 +65,7 @@ func on_enemy_killed(e):
 
 func on_player_stage_win():
 	player.on_victory()
-	$next_button.show()
+	player_won.emit()
 
 func load_current_troop():
 	if currentTroop:
