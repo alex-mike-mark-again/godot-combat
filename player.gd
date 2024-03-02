@@ -2,6 +2,7 @@ extends Battler
 class_name Player
 
 var tempBuffs: Array
+var _save
 
 func _ready():
 	super._ready()
@@ -22,6 +23,8 @@ func _update_displays(delta: Dictionary):
 
 func on_victory():
 	_gain_permanent_buffs()
+	_save = get_stats()
+	
 
 func apply_buff(buff: Buff):
 	tempBuffs.append(buff)
@@ -36,3 +39,10 @@ func _gain_permanent_buffs():
 
 func clear_buffs():
 	tempBuffs = []
+	
+func reset_to_last_save():
+	set_stats(_save)
+	clear_buffs()
+	dead = false
+	_update_displays({})
+	pass

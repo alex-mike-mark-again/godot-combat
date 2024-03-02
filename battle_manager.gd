@@ -3,7 +3,6 @@ class_name BattleManager
 
 var selected = null
 var enemies
-var prevPlayerStats
 var currentTroop
 var battleCount = 0
 var turnsTaken = 0
@@ -50,7 +49,6 @@ func _check_end_of_battle():
 
 	if _player_win():
 		on_player_stage_win()
-			
 
 func _player_win():
 	return _all_enemies_killed()
@@ -68,7 +66,6 @@ func on_enemy_killed(e):
 
 func on_player_stage_win():
 	player.on_victory()
-	prevPlayerStats = player.get_stats()
 	$next_button.show()
 
 func load_current_troop():
@@ -77,7 +74,6 @@ func load_current_troop():
 		currentTroop.queue_free()
 	
 	if battleCount < troops.size():
-		# THIS chunk is what loads the next battle.
 		currentTroop = load(troops[battleCount]).instantiate()
 		battleCount+=1
 	else:
@@ -92,12 +88,8 @@ func load_current_troop():
 
 
 func retry():
-	# This should really all be in the player
-	player.set_stats(prevPlayerStats)
-	player.clear_buffs()
-	player.dead = false
-	player._update_displays({})
-	battleCount-=1
+	player.reset_to_last_save()
+	battleCount-=1 # dumb troop mgmt.
 	load_current_troop()
 
 
