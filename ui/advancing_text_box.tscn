@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt8jyjvkvxvb0"]
+
+[ext_resource type="Script" path="res://ui/advancing_text_box.gd" id="1_nk2h2"]
+
+[node name="advancing_text_box" type="Label"]
+script = ExtResource("1_nk2h2")
+text_list = Array[String]([""])
