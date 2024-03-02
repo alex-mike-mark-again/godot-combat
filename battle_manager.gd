@@ -5,7 +5,6 @@ var selected = null
 var enemies
 var currentTroop
 var battleCount = 0
-var turnsTaken = 0
 var clickOn = true
 @export var gameOver: Node
 @export var player: Node
@@ -29,7 +28,6 @@ func on_select(e):
 
 func _battle():
 	clickOn = false
-	turnsTaken += 1
 	selected.take_damage(player.atk)
 	selected.reduce_atk(player.rdc)
 	await selected.animationPlayer.animation_finished
