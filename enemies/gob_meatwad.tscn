@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx7dg6oyd4te6"]
-
-[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_eoaut"]
-
-[node name="gob_meatwad" instance=ExtResource("1_eoaut")]
-buff_hp = 6
-atk = 1
-maxHp = 15

@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd24p0q2l1fng"]
-
-[ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_28b0h"]
-
-[node name="gob_skrungle" instance=ExtResource("1_28b0h")]
-buff_atk = 2
-buff_hp = 6
-atk = 1
-maxHp = 6
