@@ -7,23 +7,20 @@
 
 [node name="Main" type="Control" node_paths=PackedStringArray("bm")]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_yucwt")
 bm = NodePath("BattleManager")
 
 [node name="BattleManager" type="Node" parent="." node_paths=PackedStringArray("gameOver", "player")]
 script = ExtResource("4_qqxit")
-gameOver = NodePath("game_over")
+gameOver = NodePath("../game_over")
 player = NodePath("Player")
 troops = ["res://troops/stage1b.tscn", "res://troops/stage2b.tscn", "res://troops/stage3b.tscn", "res://troops/stage4b.tscn", "res://troops/stage4half.tscn", "res://troops/stage5b.tscn"]
-
-[node name="game_over" parent="BattleManager" node_paths=PackedStringArray("battle_manager") instance=ExtResource("1_01dvc")]
-visible = false
-z_index = 1
-anchors_preset = -1
-offset_left = 4.0
-offset_right = 4.0
-battle_manager = NodePath("..")
 
 [node name="Player" parent="BattleManager" instance=ExtResource("2_ie8iv")]
 z_index = 0
@@ -36,14 +33,35 @@ offset_right = 560.0
 offset_bottom = -60.0
 grow_vertical = 0
 
-[node name="next_button" type="Button" parent="BattleManager"]
-visible = false
-offset_left = 502.0
-offset_top = 479.0
-offset_right = 594.0
-offset_bottom = 510.0
+[node name="next_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 139.315
+offset_right = 46.0
+offset_bottom = 170.315
+grow_horizontal = 2
+grow_vertical = 2
 text = "Next Stage	"
+
+[node name="game_over" parent="." node_paths=PackedStringArray("battle_manager") instance=ExtResource("1_01dvc")]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -130.0
+offset_bottom = -130.0
+battle_manager = NodePath("../BattleManager")
 
 [connection signal="player_lost" from="BattleManager" to="." method="_on_battle_manager_player_lost"]
 [connection signal="player_won" from="BattleManager" to="." method="_on_battle_manager_player_won"]
-[connection signal="pressed" from="BattleManager/next_button" to="BattleManager" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="BattleManager" method="_on_next_button_pressed"]

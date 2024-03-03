@@ -93,5 +93,4 @@ func retry():
 
 
 func _on_next_button_pressed():
-	$next_button.hide()
 	load_current_troop()

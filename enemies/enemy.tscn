@@ -161,16 +161,24 @@ libraries = {
 "": SubResource("AnimationLibrary_45lhc")
 }
 
+[node name="Selector" type="Button" parent="."]
+layout_mode = 1
+offset_right = 136.0
+offset_bottom = 136.0
+theme = SubResource("Theme_llx87")
+icon = ExtResource("2_1djyi")
+
 [node name="Labels" type="Control" parent="."]
-z_index = 1
 layout_mode = 1
 anchors_preset = 0
 offset_top = -20.0
 offset_right = 136.0
 offset_bottom = 139.0
+mouse_filter = 2
 
 [node name="bite" type="Control" parent="Labels"]
 layout_mode = 1
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -202,6 +210,7 @@ text = "0	"
 
 [node name="chill" type="Control" parent="Labels"]
 layout_mode = 1
+anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = -11.0
@@ -364,13 +373,6 @@ offset_bottom = 33.0
 grow_horizontal = 2
 text = "[name]"
 horizontal_alignment = 1
-
-[node name="Selector" type="Button" parent="."]
-layout_mode = 1
-offset_right = 136.0
-offset_bottom = 136.0
-theme = SubResource("Theme_llx87")
-icon = ExtResource("2_1djyi")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_hj6iw")
