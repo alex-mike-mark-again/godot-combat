@@ -8,13 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://crsqdtsyoglrl" path="res://sprites/bg_windows.png" id="4_eynfx"]
 [ext_resource type="Texture2D" uid="uid://rcjoqrya5n1s" path="res://sprites/goblin_frostbite.png" id="7_fitlv"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e0mkc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmuyx"]
 resource_local_to_scene = true
 shader = ExtResource("3_o8glo")
 shader_parameter/scroll_speed = 0.5
 shader_parameter/transparency = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oth8j"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eytkm"]
 resource_local_to_scene = true
 shader = ExtResource("3_o8glo")
 shader_parameter/scroll_speed = 0.5
@@ -35,7 +35,7 @@ mouse_filter = 2
 color = Color(0.32549, 0.360784, 0.662745, 1)
 
 [node name="BackgroundLayer2" parent="background" instance=ExtResource("2_iyebe")]
-material = SubResource("ShaderMaterial_e0mkc")
+material = SubResource("ShaderMaterial_qmuyx")
 offset_right = 1148.0
 offset_bottom = 639.0
 texture = ExtResource("4_eynfx")
@@ -43,7 +43,7 @@ scroll_speed = 0.5
 
 [node name="BackgroundLayer3" parent="background" instance=ExtResource("2_iyebe")]
 modulate = Color(0.321569, 0.34902, 1, 1)
-material = SubResource("ShaderMaterial_oth8j")
+material = SubResource("ShaderMaterial_eytkm")
 offset_right = 1165.0
 offset_bottom = 651.0
 texture = ExtResource("4_5abss")
@@ -69,16 +69,14 @@ offset_bottom = 132.0
 buff_atk = 4
 atk = 5
 
-[node name="bite" parent="enemies/FROSTBITE/Labels" index="0"]
-anchors_preset = 3
-
-[node name="chill" parent="enemies/FROSTBITE/Labels" index="1"]
-anchors_preset = 2
-
-[node name="Selector" parent="enemies/FROSTBITE" index="2"]
+[node name="Selector" parent="enemies/FROSTBITE" index="1"]
 offset_right = 2454.0
 offset_bottom = 2818.0
 scale = Vector2(0.105, 0.105)
 icon = ExtResource("7_fitlv")
+
+[node name="chill" parent="enemies/FROSTBITE/Labels" index="1"]
+offset_left = 0.0
+offset_right = 51.0
 
 [editable path="enemies/FROSTBITE"]
