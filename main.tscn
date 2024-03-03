@@ -15,12 +15,11 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_yucwt")
 bm = NodePath("BattleManager")
+scenes = Array[String](["res://troops/stage1b.tscn", "res://troops/stage2b.tscn", "res://troops/stage3b.tscn", "res://troops/stage4b.tscn", "res://troops/stage4half.tscn", "res://troops/stage5b.tscn"])
 
-[node name="BattleManager" type="Node" parent="." node_paths=PackedStringArray("gameOver", "player")]
+[node name="BattleManager" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("4_qqxit")
-gameOver = NodePath("../game_over")
 player = NodePath("Player")
-troops = ["res://troops/stage1b.tscn", "res://troops/stage2b.tscn", "res://troops/stage3b.tscn", "res://troops/stage4b.tscn", "res://troops/stage4half.tscn", "res://troops/stage5b.tscn"]
 
 [node name="Player" parent="BattleManager" instance=ExtResource("2_ie8iv")]
 z_index = 0
@@ -64,4 +63,3 @@ battle_manager = NodePath("../BattleManager")
 [connection signal="player_lost" from="BattleManager" to="." method="_on_battle_manager_player_lost"]
 [connection signal="player_won" from="BattleManager" to="." method="_on_battle_manager_player_won"]
 [connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="BattleManager" method="_on_next_button_pressed"]

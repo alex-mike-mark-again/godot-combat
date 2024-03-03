@@ -4,16 +4,14 @@ class_name BattleManager
 var selected = null
 var enemies
 var currentTroop
-var battleCount = 0
 var clickOn = true
-@export var gameOver: Node
 @export var player: Node
-@export var troops = []
+var packedTroop
 
 signal player_won
 signal player_lost
 
-func _ready():
+func start_battle():
 	on_player_stage_win()
 	load_current_troop()
 
@@ -72,11 +70,7 @@ func load_current_troop():
 		remove_child(currentTroop)
 		currentTroop.queue_free()
 	
-	if battleCount < troops.size():
-		currentTroop = load(troops[battleCount]).instantiate()
-		battleCount+=1
-	else:
-		get_tree().change_scene_to_file("res://game_won.tscn")
+	currentTroop = packedTroop.instantiate()
 	
 	add_child(currentTroop)
 	move_child(currentTroop,0)
@@ -85,12 +79,9 @@ func load_current_troop():
 		enemy.selected.connect(on_select)
 		enemy.died.connect(on_enemy_killed)
 
-
 func retry():
 	player.reset_to_last_save()
-	battleCount-=1 # dumb troop mgmt.
 	load_current_troop()
 
-
-func _on_next_button_pressed():
-	load_current_troop()
+func set_troop(newTroop):
+	packedTroop = load(newTroop)
