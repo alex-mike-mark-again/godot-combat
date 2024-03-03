@@ -5,8 +5,8 @@ var selected = null
 var enemies
 var currentTroop
 var clickOn = true
-@export var player: Node
 var packedTroop
+@export var player: Node
 
 signal player_won
 signal player_lost

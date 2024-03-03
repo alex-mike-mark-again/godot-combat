@@ -19,17 +19,19 @@ scenes = Array[String](["res://troops/stage1b.tscn", "res://troops/stage2b.tscn"
 
 [node name="BattleManager" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("4_qqxit")
-player = NodePath("Player")
+player = NodePath("../Player")
 
-[node name="Player" parent="BattleManager" instance=ExtResource("2_ie8iv")]
+[node name="Player" parent="." instance=ExtResource("2_ie8iv")]
 z_index = 0
-anchors_preset = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 560.0
-offset_top = -60.0
-offset_right = 560.0
-offset_bottom = -60.0
+offset_top = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
 grow_vertical = 0
 
 [node name="next_button" type="Button" parent="."]
