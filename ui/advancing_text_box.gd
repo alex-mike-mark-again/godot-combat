@@ -7,5 +7,10 @@ func advance():
 	text_index = text_index + 1
 	if text_index < text_list.size():
 		text = " ".join([text,text_list[text_index].c_unescape()])
-	else:
-		text = end_text
+
+func set_text_list(list):
+	text_list = list
+
+func reset():
+	text = ""
+	text_index = -1

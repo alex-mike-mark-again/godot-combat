@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://n6rnysidrtdr"]
+[gd_scene load_steps=7 format=3 uid="uid://n6rnysidrtdr"]
 
 [ext_resource type="PackedScene" uid="uid://m54xv0p7docx" path="res://game_over.tscn" id="1_01dvc"]
 [ext_resource type="Script" path="res://main.gd" id="1_yucwt"]
 [ext_resource type="PackedScene" uid="uid://d4fksgdv4turk" path="res://player.tscn" id="2_ie8iv"]
 [ext_resource type="Script" path="res://battle_manager.gd" id="4_qqxit"]
+[ext_resource type="Script" path="res://story_manager.gd" id="5_w8glt"]
+[ext_resource type="PackedScene" uid="uid://bt8jyjvkvxvb0" path="res://ui/advancing_text_box.tscn" id="6_6gmre"]
 
 [node name="Main" type="Control" node_paths=PackedStringArray("bm")]
 layout_mode = 3
@@ -41,10 +43,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = 139.315
-offset_right = 46.0
-offset_bottom = 170.315
+offset_left = 198.0
+offset_top = 223.0
+offset_right = 290.0
+offset_bottom = 254.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Next Stage	"
@@ -61,6 +63,54 @@ anchor_bottom = 0.5
 offset_top = -130.0
 offset_bottom = -130.0
 battle_manager = NodePath("../BattleManager")
+
+[node name="StoryManager" type="Control" parent="." node_paths=PackedStringArray("atb")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_w8glt")
+atb = NodePath("advancing_text_box")
+
+[node name="advancing_text_box" parent="StoryManager" instance=ExtResource("6_6gmre")]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 26.0
+offset_top = 26.0
+offset_right = -26.0
+offset_bottom = 52.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Congreatulations on winning thje battle. Go to the next one!!!!!!!!!!"
+
+[node name="button_deck" type="HBoxContainer" parent="StoryManager"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="hide_button" type="Button" parent="StoryManager/button_deck"]
+layout_mode = 2
+text = "X_X"
+
+[node name="next_line_button" type="Button" parent="StoryManager/button_deck"]
+layout_mode = 2
+text = "=>"
+
+[node name="next_stage_button" type="Button" parent="StoryManager/button_deck"]
+layout_mode = 2
+text = ">>"
 
 [connection signal="player_lost" from="BattleManager" to="." method="_on_battle_manager_player_lost"]
 [connection signal="player_won" from="BattleManager" to="." method="_on_battle_manager_player_won"]
