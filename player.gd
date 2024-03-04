@@ -6,6 +6,7 @@ var _save
 
 func _ready():
 	super._ready()
+	_save = get_stats()
 	_update_displays({})
 	
 func _update_displays(delta: Dictionary):

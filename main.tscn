@@ -36,21 +36,6 @@ offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="next_button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 198.0
-offset_top = 223.0
-offset_right = 290.0
-offset_bottom = 254.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Next Stage	"
-
 [node name="game_over" parent="." node_paths=PackedStringArray("battle_manager") instance=ExtResource("1_01dvc")]
 visible = false
 top_level = true
@@ -86,6 +71,7 @@ offset_bottom = 52.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 text = "Congreatulations on winning thje battle. Go to the next one!!!!!!!!!!"
+text_list = Array[String](["Congrats.", "You diddit.", "You won the mission. Good Jorj"])
 
 [node name="button_deck" type="HBoxContainer" parent="StoryManager"]
 layout_mode = 1
@@ -102,6 +88,7 @@ grow_vertical = 0
 
 [node name="hide_button" type="Button" parent="StoryManager/button_deck"]
 layout_mode = 2
+toggle_mode = true
 text = "X_X"
 
 [node name="next_line_button" type="Button" parent="StoryManager/button_deck"]
@@ -114,4 +101,7 @@ text = ">>"
 
 [connection signal="player_lost" from="BattleManager" to="." method="_on_battle_manager_player_lost"]
 [connection signal="player_won" from="BattleManager" to="." method="_on_battle_manager_player_won"]
-[connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]
+[connection signal="toggled" from="StoryManager/button_deck/hide_button" to="StoryManager" method="_on_hide_button_toggled"]
+[connection signal="pressed" from="StoryManager/button_deck/next_line_button" to="StoryManager" method="_on_next_line_button_pressed"]
+[connection signal="pressed" from="StoryManager/button_deck/next_stage_button" to="." method="_on_next_stage_button_pressed"]
+[connection signal="pressed" from="StoryManager/button_deck/next_stage_button" to="StoryManager" method="_on_next_stage_button_pressed"]

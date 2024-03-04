@@ -8,13 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://crsqdtsyoglrl" path="res://sprites/bg_windows.png" id="4_eynfx"]
 [ext_resource type="Texture2D" uid="uid://rcjoqrya5n1s" path="res://sprites/goblin_frostbite.png" id="7_fitlv"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmuyx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1o2r"]
 resource_local_to_scene = true
 shader = ExtResource("3_o8glo")
 shader_parameter/scroll_speed = 0.5
 shader_parameter/transparency = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_eytkm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekmsp"]
 resource_local_to_scene = true
 shader = ExtResource("3_o8glo")
 shader_parameter/scroll_speed = 0.5
@@ -35,7 +35,7 @@ mouse_filter = 2
 color = Color(0.32549, 0.360784, 0.662745, 1)
 
 [node name="BackgroundLayer2" parent="background" instance=ExtResource("2_iyebe")]
-material = SubResource("ShaderMaterial_qmuyx")
+material = SubResource("ShaderMaterial_s1o2r")
 offset_right = 1148.0
 offset_bottom = 639.0
 texture = ExtResource("4_eynfx")
@@ -43,7 +43,7 @@ scroll_speed = 0.5
 
 [node name="BackgroundLayer3" parent="background" instance=ExtResource("2_iyebe")]
 modulate = Color(0.321569, 0.34902, 1, 1)
-material = SubResource("ShaderMaterial_eytkm")
+material = SubResource("ShaderMaterial_ekmsp")
 offset_right = 1165.0
 offset_bottom = 651.0
 texture = ExtResource("4_5abss")

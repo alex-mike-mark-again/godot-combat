@@ -12,7 +12,6 @@ signal player_won
 signal player_lost
 
 func start_battle():
-	on_player_stage_win()
 	load_current_troop()
 
 func on_select(e):
