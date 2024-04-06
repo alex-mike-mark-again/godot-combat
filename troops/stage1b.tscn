@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://5tr7ixvlx0ws"]
+[gd_scene load_steps=11 format=3 uid="uid://5tr7ixvlx0ws"]
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_0iy2c"]
 [ext_resource type="PackedScene" uid="uid://cflm1sckvoqrl" path="res://ui/background_layer.tscn" id="2_iyebe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://ui/background.gdshader" id="3_o8glo"]
 [ext_resource type="Texture2D" uid="uid://ch8dyx6fiqyjh" path="res://sprites/bg_cell_grid.png" id="4_5abss"]
 [ext_resource type="Texture2D" uid="uid://crsqdtsyoglrl" path="res://sprites/bg_windows.png" id="4_eynfx"]
+[ext_resource type="Shader" path="res://test_scenes/circle_thang.gdshader" id="5_j0fj3"]
 [ext_resource type="Texture2D" uid="uid://rcjoqrya5n1s" path="res://sprites/goblin_frostbite.png" id="7_fitlv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s1o2r"]
@@ -16,9 +17,7 @@ shader_parameter/transparency = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ekmsp"]
 resource_local_to_scene = true
-shader = ExtResource("3_o8glo")
-shader_parameter/scroll_speed = 0.5
-shader_parameter/transparency = 1.0
+shader = ExtResource("5_j0fj3")
 
 [node name="stage1b" type="Control"]
 layout_mode = 3

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bplpev51ghbs6"]
+
+[ext_resource type="PackedScene" uid="uid://cflm1sckvoqrl" path="res://ui/background_layer.tscn" id="1_nvdc7"]
+[ext_resource type="Shader" path="res://test_scenes/shader_playground.gdshader" id="2_d13ms"]
+[ext_resource type="Texture2D" uid="uid://ch8dyx6fiqyjh" path="res://sprites/bg_cell_grid.png" id="3_cyfjj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_djbdh"]
+shader = ExtResource("2_d13ms")
+
+[node name="ShaderPlayground" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundLayer" parent="." instance=ExtResource("1_nvdc7")]
+material = SubResource("ShaderMaterial_djbdh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_cyfjj")
