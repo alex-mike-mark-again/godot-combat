@@ -42,6 +42,7 @@ func _battle():
 func _check_end_of_battle():
 	if player.dead:
 		player_lost.emit()
+		clickOn = false
 
 	if _player_win():
 		on_player_stage_win()
@@ -80,6 +81,7 @@ func load_current_troop():
 
 func retry():
 	player.reset_to_last_save()
+	clickOn = true
 	load_current_troop()
 
 func set_troop(newTroop):
