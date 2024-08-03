@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkxsy0ps5udh2"]
+[gd_scene load_steps=3 format=3 uid="uid://dkxsy0ps5udh2"]
 
 [ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_x54mq"]
+[ext_resource type="Texture2D" uid="uid://ddadtq1q4mjk0" path="res://sprites/gust.png" id="2_eaj54"]
 
 [node name="gust" instance=ExtResource("1_x54mq")]
 buff_hp = 10
 buff_max_hp = 5
+
+[node name="Selector" parent="." index="1"]
+offset_right = 1040.0
+offset_bottom = 825.0
+scale = Vector2(0.19, 0.19)
+icon = ExtResource("2_eaj54")
