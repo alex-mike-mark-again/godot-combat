@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5mgtrkihrxvv"]
+[gd_scene load_steps=3 format=3 uid="uid://c5mgtrkihrxvv"]
 
 [ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_ypfej"]
+[ext_resource type="Texture2D" uid="uid://dojbtb3d8kum" path="res://sprites/seal_major.png" id="2_cq17w"]
 
 [node name="near star seal" instance=ExtResource("1_ypfej")]
 atk = 8
 maxHp = 40
+
+[node name="Selector" parent="." index="1"]
+offset_right = 544.0
+offset_bottom = 520.0
+icon = ExtResource("2_cq17w")

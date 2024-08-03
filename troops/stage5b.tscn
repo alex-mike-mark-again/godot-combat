@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://chjwmkn7amrwe"]
+[gd_scene load_steps=6 format=3 uid="uid://chjwmkn7amrwe"]
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_ny42d"]
 [ext_resource type="PackedScene" uid="uid://c5mgtrkihrxvv" path="res://enemies/near_star_seal.tscn" id="2_gw7es"]
 [ext_resource type="PackedScene" uid="uid://ba43xou0pu1u3" path="res://enemies/near_star_subseal.tscn" id="3_yy7xh"]
+[ext_resource type="Texture2D" uid="uid://bsrer5pbilnnj" path="res://sprites/sun.png" id="4_numxa"]
+[ext_resource type="Texture2D" uid="uid://2xe4xmhn44mw" path="res://sprites/seal_minor_diamond.png" id="4_wp3u0"]
 
 [node name="stage5b" type="Control"]
 layout_mode = 3
@@ -12,27 +14,46 @@ script = ExtResource("1_ny42d")
 [node name="enemies" type="Node" parent="."]
 
 [node name="near star primary seal" parent="enemies" instance=ExtResource("2_gw7es")]
-offset_left = 449.0
-offset_top = 90.0
-offset_right = 449.0
-offset_bottom = 90.0
+offset_left = 317.0
+offset_top = -33.0
+offset_right = 317.0
+offset_bottom = -33.0
 
 [node name="near star major subseal" parent="enemies" instance=ExtResource("3_yy7xh")]
-offset_left = 198.0
-offset_top = 249.0
-offset_right = 198.0
-offset_bottom = 249.0
+offset_left = 28.0
+offset_top = 120.0
+offset_right = 28.0
+offset_bottom = 120.0
 buff_hp = 4
 buff_rdc = 1
 atk = 2
 maxHp = 10
 
+[node name="Selector" parent="enemies/near star major subseal" index="1"]
+scale = Vector2(0.5, 0.5)
+
 [node name="near star minor subseal" parent="enemies" instance=ExtResource("3_yy7xh")]
-offset_left = 715.0
-offset_top = 248.0
-offset_right = 715.0
-offset_bottom = 248.0
+offset_left = 785.0
+offset_top = 113.0
+offset_right = 785.0
+offset_bottom = 113.0
 buff_atk = 1
 buff_hp = 10
 atk = 2
 maxHp = 10
+
+[node name="Selector" parent="enemies/near star minor subseal" index="1"]
+offset_right = 507.4
+scale = Vector2(0.595, 0.595)
+icon = ExtResource("4_wp3u0")
+
+[node name="sun" type="TextureRect" parent="."]
+offset_left = 476.0
+offset_top = 89.0
+offset_right = 976.0
+offset_bottom = 603.0
+scale = Vector2(0.475, 0.475)
+texture = ExtResource("4_numxa")
+
+[editable path="enemies/near star major subseal"]
+[editable path="enemies/near star minor subseal"]
