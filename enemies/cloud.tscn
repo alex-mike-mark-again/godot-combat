@@ -7,11 +7,11 @@
 buff_atk = 5
 maxHp = 3
 
-[node name="Labels" parent="." index="1"]
-offset_right = 497.0
-offset_bottom = 240.0
-
-[node name="Selector" parent="." index="2"]
+[node name="Selector" parent="." index="1"]
 offset_right = 497.0
 offset_bottom = 260.0
 icon = ExtResource("2_d2gfc")
+
+[node name="Labels" parent="." index="2"]
+offset_right = 497.0
+offset_bottom = 240.0

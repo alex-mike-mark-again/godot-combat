@@ -9,11 +9,11 @@ buff_hp = 10
 atk = 2
 maxHp = 12
 
-[node name="Labels" parent="." index="1"]
-offset_right = 340.0
-offset_bottom = 231.0
-
-[node name="Selector" parent="." index="2"]
+[node name="Selector" parent="." index="1"]
 offset_right = 340.0
 offset_bottom = 251.0
 icon = ExtResource("2_efbue")
+
+[node name="Labels" parent="." index="2"]
+offset_right = 340.0
+offset_bottom = 231.0
