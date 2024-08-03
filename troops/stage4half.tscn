@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmm60lacs8as5"]
+[gd_scene load_steps=6 format=3 uid="uid://dmm60lacs8as5"]
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_lcfo0"]
 [ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="2_04eht"]
+[ext_resource type="Texture2D" uid="uid://dqesncgw65iq7" path="res://sprites/trip_heat.png" id="3_ed4lr"]
+[ext_resource type="Texture2D" uid="uid://bgqu0f8myixtj" path="res://sprites/trip_smoke.png" id="3_rlk2f"]
+[ext_resource type="Texture2D" uid="uid://btqtnw0re0p87" path="res://sprites/trip_light.png" id="5_87ov0"]
 
 [node name="stage4half" type="Control"]
 layout_mode = 3
@@ -13,26 +16,48 @@ script = ExtResource("1_lcfo0")
 [node name="enemies" type="Node" parent="."]
 
 [node name="gimme heat" parent="enemies" instance=ExtResource("2_04eht")]
-offset_left = 483.0
-offset_top = 129.0
-offset_right = 483.0
-offset_bottom = 129.0
+offset_left = 488.0
+offset_top = 134.0
+offset_right = 488.0
+offset_bottom = 134.0
 buff_atk = 3
 buff_rdc = -1
 
+[node name="Selector" parent="enemies/gimme heat" index="1"]
+offset_right = 408.0
+offset_bottom = 437.0
+scale = Vector2(0.365, 0.365)
+icon = ExtResource("3_ed4lr")
+
 [node name="gimme smoke" parent="enemies" instance=ExtResource("2_04eht")]
-offset_left = 852.0
-offset_top = 148.0
-offset_right = 852.0
-offset_bottom = 148.0
+offset_left = 733.0
+offset_top = 134.0
+offset_right = 733.0
+offset_bottom = 134.0
 buff_rdc = 1
 buff_max_hp = -10
 
+[node name="Selector" parent="enemies/gimme smoke" index="1"]
+offset_right = 506.0
+offset_bottom = 447.0
+scale = Vector2(0.365, 0.365)
+icon = ExtResource("3_rlk2f")
+
 [node name="gimme light" parent="enemies" instance=ExtResource("2_04eht")]
-offset_left = 135.0
-offset_top = 139.0
-offset_right = 135.0
-offset_bottom = 139.0
+offset_left = 246.0
+offset_top = 135.0
+offset_right = 246.0
+offset_bottom = 135.0
 buff_atk = -2
 buff_hp = 10
 buff_max_hp = 10
+
+[node name="Selector" parent="enemies/gimme light" index="1"]
+offset_right = 506.0
+offset_bottom = 570.0
+scale = Vector2(0.275, 0.275)
+icon = ExtResource("5_87ov0")
+
+[editable path="enemies/gimme heat"]
+[editable path="enemies/gimme smoke"]
+[editable path="enemies/gimme light"]

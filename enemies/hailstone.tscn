@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://defwgb8xknsds"]
+[gd_scene load_steps=3 format=3 uid="uid://defwgb8xknsds"]
 
 [ext_resource type="PackedScene" uid="uid://d15w3qccq2gc8" path="res://enemies/enemy.tscn" id="1_o40an"]
+[ext_resource type="Texture2D" uid="uid://dbyks0orkkkw3" path="res://sprites/hail.png" id="2_lv4a6"]
 
 [node name="hailstone" instance=ExtResource("1_o40an")]
 buff_atk = 2
 atk = 1
+
+[node name="Selector" parent="." index="1"]
+offset_right = 483.0
+offset_bottom = 457.0
+scale = Vector2(0.335, 0.335)
+icon = ExtResource("2_lv4a6")
