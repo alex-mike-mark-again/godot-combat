@@ -48,18 +48,17 @@ func apply_buff(buff: Buff):
 	})
 
 func remove_buff(buff: Buff):
-	print_debug("Removing Buff ",buff.toString())
 	atk -= buff.atk
 	maxHp -= buff.maxHp
+	var prevHp = hp
 	hp = min(hp, maxHp)
 	rdc -= buff.rdc
-	_update_displays({
+	_update_displays({ # i think i hate this function
 		"atk": -buff.atk,
 		"maxHp": -buff.maxHp,
-		"hp": -buff.hp, 
+		"hp": hp - prevHp,
 		"rdc": -buff.rdc
 	})
-	print_debug("HP is at "+str(hp))
 
 func get_stats():
 	return {

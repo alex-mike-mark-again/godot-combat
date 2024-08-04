@@ -20,8 +20,8 @@ shader_parameter/transparency = 0.1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jt6nx"]
 shader = ExtResource("5_dlefm")
-shader_parameter/scroll_speed = 0.4
-shader_parameter/direction = Vector2(1, -4)
+shader_parameter/scroll_speed = 0.2
+shader_parameter/direction = Vector2(0.6, -2.2)
 
 [node name="stage3b" type="Control"]
 layout_mode = 3
@@ -57,38 +57,38 @@ script = null
 [node name="enemies" type="Node" parent="."]
 
 [node name="Heavy Cloud" parent="enemies" instance=ExtResource("2_10acv")]
-offset_left = 639.0
-offset_top = 15.0
-offset_right = 639.0
-offset_bottom = 15.0
+offset_left = 631.0
+offset_top = 23.0
+offset_right = 631.0
+offset_bottom = 23.0
 buff_atk = 0
 buff_hp = 15
 buff_max_hp = 2
 maxHp = 1
 
 [node name="Snowfall Jubilance" parent="enemies" instance=ExtResource("3_wcuse")]
-offset_left = 791.0
-offset_top = 285.0
-offset_right = 791.0
-offset_bottom = 285.0
+offset_left = 764.0
+offset_top = 302.0
+offset_right = 764.0
+offset_bottom = 302.0
 buff_rdc = 1
 atk = 1
 maxHp = 2
 
 [node name="Lazy Gust" parent="enemies" instance=ExtResource("4_w12el")]
-offset_left = 105.0
-offset_top = 29.0
-offset_right = 105.0
-offset_bottom = 29.0
+offset_left = 21.0
+offset_top = 31.0
+offset_right = 21.0
+offset_bottom = 31.0
 buff_atk = 1
 buff_rdc = 1
 atk = 2
 
 [node name="King Blizzard" parent="enemies" instance=ExtResource("2_wph1y")]
-offset_left = 409.0
-offset_top = 297.0
-offset_right = 409.0
-offset_bottom = 297.0
+offset_left = 315.0
+offset_top = 272.0
+offset_right = 315.0
+offset_bottom = 272.0
 
 [node name="Selector" parent="enemies/King Blizzard" index="1"]
 offset_right = 338.0
