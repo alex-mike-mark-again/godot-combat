@@ -33,9 +33,13 @@ func apply_buff(buff: Buff):
 	
 func _gain_permanent_buffs():
 	var removals = tempBuffs.size() - 1
+	var bigRemoval = Buff.new(0,0,0,0)
+	# TODO: add buffs together
+	# then remove them all at once?
 	for i in removals:
-		remove_buff(tempBuffs[i])
+		bigRemoval = bigRemoval.add(tempBuffs[i])
 	
+	remove_buff(bigRemoval)
 	clear_buffs()
 
 func clear_buffs():

@@ -20,7 +20,11 @@ offset_left = -180.5
 offset_right = 180.5
 offset_bottom = 26.0
 grow_horizontal = 2
-text = "SFX by Floraphonic. Sourced from pixabay.com"
+text = "SFX by Floraphonic. Sourced from pixabay.com
+
+Programming and Art by Kerokerosene
+
+Built with Godot"
 
 [node name="GoBackButton" type="Button" parent="."]
 layout_mode = 1

@@ -38,7 +38,7 @@ func _update_displays(delta: Dictionary):
 func apply_buff(buff: Buff):
 	atk += buff.atk
 	maxHp += buff.maxHp
-	hp = min(hp+buff.hp,maxHp)
+	hp = min(hp+buff.hp, maxHp)
 	rdc += buff.rdc
 	_update_displays({
 		"atk": buff.atk,
@@ -48,6 +48,7 @@ func apply_buff(buff: Buff):
 	})
 
 func remove_buff(buff: Buff):
+	print_debug("Removing Buff ",buff.toString())
 	atk -= buff.atk
 	maxHp -= buff.maxHp
 	hp = min(hp, maxHp)
@@ -58,6 +59,7 @@ func remove_buff(buff: Buff):
 		"hp": -buff.hp, 
 		"rdc": -buff.rdc
 	})
+	print_debug("HP is at "+str(hp))
 
 func get_stats():
 	return {

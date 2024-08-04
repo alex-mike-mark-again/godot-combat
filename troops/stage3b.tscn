@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqx2euil23nku"]
+[gd_scene load_steps=14 format=3 uid="uid://bqx2euil23nku"]
 
 [ext_resource type="Script" path="res://troops/troop.gd" id="1_yvrue"]
 [ext_resource type="PackedScene" uid="uid://c1wgu6c3s50od" path="res://enemies/cloud.tscn" id="2_10acv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c21fn67qo2v8u" path="res://enemies/wind.tscn" id="4_w12el"]
 [ext_resource type="Shader" path="res://ui/2d_scrolling.gdshader" id="5_dlefm"]
 [ext_resource type="Texture2D" uid="uid://bm116usmftebm" path="res://sprites/bg_swirly_snow.png" id="6_uyp3w"]
+[ext_resource type="Texture2D" uid="uid://ck7xxlvcrmnqv" path="res://sprites/bear.png" id="11_t06sk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k5hms"]
 resource_local_to_scene = true
@@ -55,36 +56,44 @@ script = null
 
 [node name="enemies" type="Node" parent="."]
 
-[node name="Cloud" parent="enemies" instance=ExtResource("2_10acv")]
-offset_left = 13.0
-offset_top = 50.0
-offset_right = 13.0
-offset_bottom = 50.0
+[node name="Heavy Cloud" parent="enemies" instance=ExtResource("2_10acv")]
+offset_left = 639.0
+offset_top = 15.0
+offset_right = 639.0
+offset_bottom = 15.0
 buff_atk = 0
 buff_hp = 15
 buff_max_hp = 2
 maxHp = 1
 
-[node name="SNOW" parent="enemies" instance=ExtResource("3_wcuse")]
-offset_left = 672.0
-offset_top = 282.0
-offset_right = 672.0
-offset_bottom = 282.0
+[node name="Snowfall Jubilance" parent="enemies" instance=ExtResource("3_wcuse")]
+offset_left = 791.0
+offset_top = 285.0
+offset_right = 791.0
+offset_bottom = 285.0
 buff_rdc = 1
 atk = 1
 maxHp = 2
 
-[node name="WIND" parent="enemies" instance=ExtResource("4_w12el")]
-offset_left = 814.0
-offset_top = 60.0
-offset_right = 814.0
-offset_bottom = 60.0
+[node name="Lazy Gust" parent="enemies" instance=ExtResource("4_w12el")]
+offset_left = 105.0
+offset_top = 29.0
+offset_right = 105.0
+offset_bottom = 29.0
 buff_atk = 1
 buff_rdc = 1
 atk = 2
 
-[node name="king blizzard" parent="enemies" instance=ExtResource("2_wph1y")]
-offset_left = 347.0
-offset_top = 277.0
-offset_right = 347.0
-offset_bottom = 277.0
+[node name="King Blizzard" parent="enemies" instance=ExtResource("2_wph1y")]
+offset_left = 409.0
+offset_top = 297.0
+offset_right = 409.0
+offset_bottom = 297.0
+
+[node name="Selector" parent="enemies/King Blizzard" index="1"]
+offset_right = 338.0
+offset_bottom = 249.0
+scale = Vector2(0.63, 0.63)
+icon = ExtResource("11_t06sk")
+
+[editable path="enemies/King Blizzard"]

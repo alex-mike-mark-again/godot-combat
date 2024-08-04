@@ -15,7 +15,7 @@ script = ExtResource("1_lcfo0")
 
 [node name="enemies" type="Node" parent="."]
 
-[node name="gimme heat" parent="enemies" instance=ExtResource("2_04eht")]
+[node name="Smoldering" parent="enemies" instance=ExtResource("2_04eht")]
 offset_left = 488.0
 offset_top = 134.0
 offset_right = 488.0
@@ -23,13 +23,13 @@ offset_bottom = 134.0
 buff_atk = 3
 buff_rdc = -1
 
-[node name="Selector" parent="enemies/gimme heat" index="1"]
+[node name="Selector" parent="enemies/Smoldering" index="1"]
 offset_right = 408.0
 offset_bottom = 437.0
 scale = Vector2(0.365, 0.365)
 icon = ExtResource("3_ed4lr")
 
-[node name="gimme smoke" parent="enemies" instance=ExtResource("2_04eht")]
+[node name="Suffocating" parent="enemies" instance=ExtResource("2_04eht")]
 offset_left = 733.0
 offset_top = 134.0
 offset_right = 733.0
@@ -37,13 +37,13 @@ offset_bottom = 134.0
 buff_rdc = 1
 buff_max_hp = -10
 
-[node name="Selector" parent="enemies/gimme smoke" index="1"]
+[node name="Selector" parent="enemies/Suffocating" index="1"]
 offset_right = 506.0
 offset_bottom = 447.0
 scale = Vector2(0.365, 0.365)
 icon = ExtResource("3_rlk2f")
 
-[node name="gimme light" parent="enemies" instance=ExtResource("2_04eht")]
+[node name="Scintillating" parent="enemies" instance=ExtResource("2_04eht")]
 offset_left = 246.0
 offset_top = 135.0
 offset_right = 246.0
@@ -52,12 +52,12 @@ buff_atk = -2
 buff_hp = 10
 buff_max_hp = 10
 
-[node name="Selector" parent="enemies/gimme light" index="1"]
+[node name="Selector" parent="enemies/Scintillating" index="1"]
 offset_right = 506.0
 offset_bottom = 570.0
 scale = Vector2(0.275, 0.275)
 icon = ExtResource("5_87ov0")
 
-[editable path="enemies/gimme heat"]
-[editable path="enemies/gimme smoke"]
-[editable path="enemies/gimme light"]
+[editable path="enemies/Smoldering"]
+[editable path="enemies/Suffocating"]
+[editable path="enemies/Scintillating"]

@@ -24,3 +24,10 @@ func toString():
 		r+="Smoke +"+str(rdc)
 
 	return r
+
+func add(other: Buff):
+	return Buff.new(self.atk + other.atk,
+		self.hp + other.hp,
+		self.rdc + other.rdc,
+		self.maxHp + other.maxHp
+	)

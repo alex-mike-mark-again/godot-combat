@@ -264,39 +264,6 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="light" type="Control" parent="Labels/Buff Display/HBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(65, 55)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Labels/Buff Display/HBoxContainer/light"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -29.0
-offset_right = 64.0
-offset_bottom = 29.0
-grow_vertical = 2
-texture = ExtResource("8_643bl")
-stretch_mode = 2
-
-[node name="Label" type="Label" parent="Labels/Buff Display/HBoxContainer/light"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -9.5
-offset_top = -18.5
-offset_right = 30.5
-offset_bottom = 18.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("7_8ljos")
-text = "X"
-
 [node name="heat" type="Control" parent="Labels/Buff Display/HBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(55, 55)
@@ -360,6 +327,35 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_8ljos")
 text = "X"
+
+[node name="light" type="Control" parent="Labels/Buff Display/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(65, 55)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Labels/Buff Display/HBoxContainer/light"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 58.0
+texture = ExtResource("8_643bl")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Labels/Buff Display/HBoxContainer/light"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_8ljos")
+text = "X"
+horizontal_alignment = 1
 
 [node name="Name Label" type="Label" parent="Labels"]
 layout_mode = 1

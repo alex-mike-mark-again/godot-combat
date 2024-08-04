@@ -6,11 +6,26 @@ extends Control
 
 func update_display(buff: Buff):
 	if(buff.hp || buff.maxHp):
+		light_label.text = ""
+		if(buff.hp > 0):
+			light_label.text += "+"+str(buff.hp)+"/"
+		else:
+			light_label.text += str(buff.hp)+"/"
+		
+		if(buff.maxHp > 0):
+			light_label.text += "+"+str(buff.maxHp)
+		else:
+			light_label.text += str(buff.maxHp)
 		$HBoxContainer/light.show()
-		light_label.text = "+"+str(buff.hp)+"/"+"+"+str(buff.maxHp)
 	if(buff.atk):
 		$HBoxContainer/heat.show()
-		heat_label.text = "+"+str(buff.atk)
+		if(buff.atk > 0):
+			heat_label.text = "+"+str(buff.atk)
+		else:
+			heat_label.text = str(buff.atk)
 	if(buff.rdc):
 		$HBoxContainer/smoke.show()
-		smoke_label.text = "+"+str(buff.rdc)
+		if(buff.rdc > 0):
+			smoke_label.text = "+"+str(buff.rdc)
+		else:
+			smoke_label.text = str(buff.rdc)
